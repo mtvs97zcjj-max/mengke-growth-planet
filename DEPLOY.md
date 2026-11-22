@@ -30,6 +30,8 @@
 6. 触发一次 Deploy，等待 Functions 构建完成。
 7. 重新打开网站并进入聊天，标题旁应显示“智能陪伴 · 已连接”。
 
+学习数据会通过 `netlify/functions/progress.js` 写入 Netlify Blobs。项目已经在 `package.json` 中声明 `@netlify/blobs`，不需要额外数据库或环境变量；部署摘要的 Functions 中应能看到 `chat` 和 `progress` 两个函数。
+
 ## 3. 用浏览器发布到 Vercel（备选）
 
 ### 先把文件放进 GitHub

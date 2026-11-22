@@ -52,6 +52,11 @@
       "url": "/#study/pinyin"
     },
     {
+      "name": "今日故事",
+      "short_name": "故事",
+      "url": "/#story"
+    },
+    {
       "name": "萌可小屋",
       "short_name": "萌可",
       "url": "/#pet"

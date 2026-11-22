@@ -1,11 +1,14 @@
 {
   "name": "mengke-growth-planet",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "萌可成长星球：幼升小儿童学习与陪伴 PWA",
   "scripts": {
     "dev": "vercel dev",
     "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
   },
   "engines": {
     "node": ">=20"

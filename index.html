@@ -13,7 +13,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -133,6 +133,10 @@
         <button class="nav-item" type="button" data-go="pet">
           <svg class="icon"><use href="#icon-paw"/></svg>
           <span>萌可小屋</span>
+        </button>
+        <button class="nav-item" type="button" data-go="story">
+          <svg class="icon"><use href="#icon-book"/></svg>
+          <span>故事屋</span>
         </button>
         <button class="nav-item" type="button" data-go="progress">
           <svg class="icon"><use href="#icon-chart"/></svg>
@@ -691,6 +695,106 @@
         </div>
       </section>
 
+      <section class="view" id="view-story" data-view="story" hidden>
+        <div class="story-hero card">
+          <div class="story-hero-copy">
+            <span class="eyebrow">每天一个好故事</span>
+            <h2 id="storyTitle">会迟到的风</h2>
+            <p id="storySummary">今天的故事正在准备中。</p>
+            <div class="story-meta">
+              <span><svg class="icon"><use href="#icon-clock"/></svg><b id="storyDuration">约 6 分钟</b></span>
+              <span><svg class="icon"><use href="#icon-star"/></svg><b id="storyTheme">细心观察</b></span>
+              <span class="story-refresh-label">每晚 0 点更新</span>
+            </div>
+            <div class="story-player-actions">
+              <button class="primary-button story-play-button" id="storyPlayButton" type="button">
+                <svg class="icon"><use href="#icon-volume"/></svg>
+                听萌可讲故事
+              </button>
+              <button class="soft-button" id="storyStopButton" type="button">
+                <svg class="icon"><use href="#icon-close"/></svg>
+                停止
+              </button>
+              <span class="story-audio-status" id="storyAudioStatus">戴上耳朵，故事要开始啦</span>
+            </div>
+          </div>
+          <div class="story-moon-art" aria-hidden="true">
+            <span class="story-moon">☾</span>
+            <span class="story-star star-a">✦</span>
+            <span class="story-star star-b">✧</span>
+            <span class="story-star star-c">✦</span>
+            <div class="story-cloud cloud-a"></div>
+            <div class="story-cloud cloud-b"></div>
+            <div class="story-book">故事<br><b>Story</b></div>
+          </div>
+        </div>
+
+        <div class="story-layout">
+          <article class="card story-reader-card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">TODAY'S STORY</span>
+                <h3>慢慢听，慢慢想</h3>
+              </div>
+              <span class="soft-badge" id="storyDayBadge">今日故事</span>
+            </div>
+            <div class="story-paragraphs" id="storyParagraphs"></div>
+            <div class="story-reflection">
+              <div>
+                <strong>听完想一想</strong>
+                <p id="storyQuestion">故事里的小主人公做对了什么？</p>
+              </div>
+              <button class="soft-button" id="storyRevealAnswer" type="button">看看提示</button>
+              <p class="story-answer" id="storyAnswer" hidden></p>
+            </div>
+            <button class="complete-lesson-button story-complete-button" id="storyCompleteButton" type="button" data-story-complete>
+              <svg class="icon"><use href="#icon-check"/></svg>
+              我听完了，收下今天的成长星
+            </button>
+          </article>
+
+          <aside class="story-side-stack">
+            <article class="card joke-card">
+              <div class="joke-title-row">
+                <div>
+                  <span class="eyebrow">DAILY JOKE</span>
+                  <h3>今日冷笑话</h3>
+                </div>
+                <span class="joke-face">•ᴗ•</span>
+              </div>
+              <p class="joke-setup" id="jokeSetup">笑话正在准备中。</p>
+              <button class="joke-reveal-button" id="jokeRevealButton" type="button">
+                点我看答案
+              </button>
+              <p class="joke-punchline" id="jokePunchline" hidden></p>
+              <button class="joke-listen-button" id="jokeListenButton" type="button">
+                <svg class="icon"><use href="#icon-volume"/></svg>
+                让萌可讲这个笑话
+              </button>
+            </article>
+
+            <article class="card detective-card">
+              <span class="eyebrow">细心小侦探</span>
+              <h3>先观察，再回答</h3>
+              <p id="detectivePrompt">找出今天的小线索。</p>
+              <div class="detective-stage" id="detectiveStage"></div>
+              <p class="quiz-feedback" id="detectiveFeedback">慢慢看，粗心小精灵最怕认真观察。</p>
+            </article>
+
+            <article class="card story-tip-card">
+              <span class="method-note-icon">听</span>
+              <div>
+                <strong>给容易粗心的孩子</strong>
+                <p>听故事时先找“谁、在哪里、发生了什么”，再回答问题。先抓线索，再动笔，是比“快一点”更有用的能力。</p>
+              </div>
+            </article>
+          </aside>
+        </div>
+        <p class="curriculum-note">
+          每日故事和笑话为原创内容。学习设计参考游戏化启蒙软件的短时任务、即时反馈、观察训练和重复巩固思路，不使用现成课程原文。
+        </p>
+      </section>
+
       <section class="view" id="view-pet" data-view="pet" hidden>
         <div class="pet-room-hero card">
           <div class="pet-room-sky">
@@ -856,6 +960,9 @@
             <span class="eyebrow">成长记录 · 只看自己的进步</span>
             <h2>每一小步，都算数。</h2>
             <p>不比较、不抢跑。我们更关注今天有没有开心地听、认真地试、主动地说。</p>
+            <div class="cloud-sync-status" id="cloudSyncStatus">
+              <i></i><span>正在连接云端学习记录</span>
+            </div>
           </div>
           <div class="progress-hero-medal">
             <span class="medal-rays">✦</span>
@@ -935,7 +1042,7 @@
       </section>
 
       <footer class="app-footer">
-        <span>萌可成长星球 · 学习数据保存在本机 · <a href="privacy.html">隐私说明</a></span>
+        <span>萌可成长星球 · 学习数据匿名同步 · <a href="privacy.html">隐私说明</a></span>
         <span>陪你慢慢长大，不催不赶。</span>
       </footer>
     </main>
@@ -949,6 +1056,9 @@
       </button>
       <button class="bottom-nav-item pet-nav-item" type="button" data-go="pet">
         <span class="bottom-pet"><svg class="icon"><use href="#icon-paw"/></svg></span><span>萌可</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-go="story">
+        <svg class="icon"><use href="#icon-book"/></svg><span>故事</span>
       </button>
       <button class="bottom-nav-item" type="button" data-go="progress">
         <svg class="icon"><use href="#icon-chart"/></svg><span>成长</span>
@@ -1051,7 +1161,7 @@
 
       <div class="privacy-note">
         <svg class="icon"><use href="#icon-lock"/></svg>
-        <p>学习记录留在当前浏览器。开启智能陪聊时，最近几条对话会发送给本站的云端 AI 服务生成回复；请不要输入住址、学校全名或密码等信息。</p>
+        <p>学习数据会用随机匿名编号同步到本站后台，便于实时刷新统计。开启智能陪聊时，最近几条对话会发送给云端 AI 生成回复；请不要输入住址、学校全名或密码等信息。</p>
       </div>
 
       <div class="settings-actions">
@@ -1159,6 +1269,6 @@
     </button>
   </div>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

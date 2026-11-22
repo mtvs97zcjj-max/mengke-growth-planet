@@ -10,3 +10,9 @@
   to = "/.netlify/functions/chat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/api/progress"
+  to = "/.netlify/functions/progress"
+  status = 200
+  force = true

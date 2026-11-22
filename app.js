@@ -176,6 +176,172 @@
     { word: "ball", translation: "球", emoji: "⚽" }
   ];
 
+  const DAILY_STORIES = [
+    {
+      title: "会迟到的风",
+      theme: "细心观察",
+      duration: "约 6 分钟",
+      summary: "小豆丁发现，风不是故意捣乱，只是每一阵风都忘记检查自己的小口袋。",
+      paragraphs: [
+        "清晨，小豆丁背着红色小书包来到院子里。妈妈让他带上水杯、图画本和一顶小帽子。他点点头，嘴里说“记住啦”，脚下却已经跑向门口。",
+        "刚走到巷子口，一阵风呼地吹来，把他的小帽子卷到了树上。小豆丁抬头看见帽子在树枝上荡来荡去，忍不住叹气：“今天的风真粗心。”",
+        "他搬来一张小凳子，又请门房爷爷帮忙，才把帽子拿下来。门房爷爷笑着说：“也许风不是粗心，它只是跑得太快了。”",
+        "小豆丁继续往前走。到了公交站，他打开书包，发现图画本还在，水杯却不见了。他急得原地转圈，心想：我一定又忘了检查。",
+        "这时，那阵风又回来了，轻轻吹动他的书包带。小豆丁忽然看见书包侧面的小口袋鼓鼓的。他伸手一摸，水杯正安安静静躺在那里。",
+        "原来水杯没有丢，只是换了位置。小豆丁有点不好意思。他刚才只看见书包正面的拉链，没有耐心把每一个小口袋都检查一遍。",
+        "他找了一处台阶坐下，把书包里的东西一样一样拿出来：图画本、水杯、纸巾、帽子。数完以后，再一样一样放回去，还给每个东西找到了固定的位置。",
+        "风在旁边轻轻转了一圈，好像也在学着他检查。小豆丁笑着说：“现在我明白了，跑得快的时候，也别忘了停下来检查一次。”",
+        "到了学校，同桌找不到橡皮，小豆丁没有马上说“肯定丢了”。他先看了看笔袋，又看了看桌角，最后在图画本下面找到了那块小橡皮。",
+        "放学回家时，风又来送他。这一次小豆丁先检查了书包，再戴好帽子。他对风说：“你不是坏风，你只是提醒我，慢一点、看仔细一点。”"
+      ],
+      question: "小豆丁最后用什么方法，找到了容易丢的东西？",
+      answer: "他先把东西分类，再逐一检查，并给每样东西固定的位置。"
+    },
+    {
+      title: "月亮邮差忘带钥匙",
+      theme: "做事有条理",
+      duration: "约 6 分钟",
+      summary: "月亮邮差要在天亮前送完星星信，可他忘带钥匙，只好和小猫一起想办法。",
+      paragraphs: [
+        "夜空里住着一位月亮邮差。他每天骑着一辆银色小车，把星星信送往不同的梦。小猫米米是他的助手，负责检查每一封信有没有贴好月光邮票。",
+        "这天晚上，月亮邮差把信件装进大口袋，匆匆忙忙就出发了。走到第一户人家门口，他伸手一摸：“糟糕，钥匙忘在云朵邮局了。”",
+        "米米没有责怪他，只问：“我们先看看，今天一共有几封信？”月亮邮差把信摊开，数出七封：三封是彩虹色，四封是银白色。",
+        "他们决定先送不锁门的花园信，再想办法回去拿钥匙。花园里的小刺猬收到信，开心地把一颗露珠送给他们，说露珠可以照出最近的路。",
+        "露珠照向云朵边，米米发现一条平时没注意的小桥。两个人沿着小桥跑回邮局，拿到钥匙，还顺手把门口的邮包整理成了两排。",
+        "月亮邮差把七封信重新数了一遍，发现少了一封。他没有急着说“丢了”，而是像检查作业一样，从第一封慢慢看到最后一封。",
+        "原来那封信夹在大口袋的夹层里。米米拍拍胸口说：“幸好我们没有只找一眼。”月亮邮差也笑了：“先检查，再出发，原来能省很多力气。”",
+        "他们把钥匙挂在门边，又把明天的信按远近排好。月光小车上贴了一张纸条：出门前，钥匙、信件、邮票，检查三样。",
+        "天亮前，七封信全部送到了。小动物们在梦里看见一朵银色小花，那是月亮邮差留下的小奖励。",
+        "从那天以后，月亮邮差每次出发前都会停三秒。他不是变慢了，而是把时间用在最需要的地方。"
+      ],
+      question: "出门前，月亮邮差决定检查哪三样东西？",
+      answer: "钥匙、信件和邮票。"
+    },
+    {
+      title: "不想滚的纽扣",
+      theme: "接受小失误",
+      duration: "约 5 分钟",
+      summary: "一颗纽扣从衣服上掉下来，它不想再被缝回去，却发现了自己的新用处。",
+      paragraphs: [
+        "小女孩果果有一件蓝外套，外套上有一排圆圆的小纽扣。最下面的一颗纽扣叫圆圆，它最喜欢听果果走路时叮叮当当的声音。",
+        "一天，果果跑得太快，圆圆从衣服上掉了下来。它咕噜咕噜滚到沙发底下，急得大喊：“我要回去！”可是没有人听见。",
+        "圆圆躲在沙发下面，看见灰尘、蜡笔头和一张旧贴纸。它想，自己是不是没有用了？果果会不会因为掉了一颗纽扣，就不再喜欢蓝外套？",
+        "过了一会儿，果果拿着手电筒来找它。她没有生气，只轻声说：“原来你在这里。我找了好几遍，刚才只看了这一边。”",
+        "圆圆被带回桌边。奶奶拿出针线，果果却没有马上递过去。她先把外套铺平，把所有纽扣排成一排，发现中间那一颗也松了。",
+        "她认真地说：“只缝一颗还不够，另一颗也要检查。”奶奶夸她像一个小裁缝。圆圆忽然明白，自己掉下来不是一件坏事，它让果果发现了一个更大的小问题。",
+        "可果果又想到，圆圆在沙发下待过，有点旧了。她找来一小块蓝色布，把圆圆缝成一只小挂饰，挂在笔袋上。",
+        "从那天起，圆圆不再是外套上的纽扣，却成了笔袋上的小太阳。每次果果写错一个数字，只要看到它，就会停下来检查一遍。",
+        "圆圆也很开心。它发现，东西掉下来、做错一次，并不代表以后就没有用。换个地方，它还可以发出新的光。"
+      ],
+      question: "圆圆掉下来以后，让果果发现了什么小问题？",
+      answer: "外套上还有一颗纽扣也松了。"
+    },
+    {
+      title: "云朵学校的第一天",
+      theme: "适应新环境",
+      duration: "约 6 分钟",
+      summary: "小云朵第一次去云朵学校，找不到教室，却因为一句勇敢的问好交到了朋友。",
+      paragraphs: [
+        "小云朵团团第一次去云朵学校。他穿着白白软软的云衣，背着一个小书包，站在校门口却不敢进去。",
+        "学校里有很多飘来飘去的云朵。有的像小兔子，有的像小鲸鱼，还有一朵云一直在练习变成长颈鹿。团团越看越紧张，连教室在哪里也忘了。",
+        "他躲到一棵大树旁边，想等别人先走。可是一阵上课铃飘过来，大家都开始往一个方向移动，团团更不知道怎么走了。",
+        "这时，一朵戴着黄色发夹的小云朵经过。团团想起妈妈说过：不知道路的时候，可以先问一句。他深吸一口气，小声说：“请问，一年级教室在哪里？”",
+        "小云朵停下来，笑着说：“我也在找，不过我们可以一起看门牌。”她们沿着走廊慢慢找，看到月亮班、星星班，终于在拐角处找到太阳班。",
+        "老师说：“你们虽然来晚了一点点，但进来以前先问清楚，做得很好。”团团坐在窗边，刚才紧握的小手终于放松了。",
+        "第一节课是观察云朵的形状。团团发现自己很会看细节：那朵云像一只鞋，那朵云像一只在打喷嚏的大象。同学们都跟着他一起猜。",
+        "下午，团团又找不到洗手间。他没有像早上那样站着发愁，而是问旁边的同学：“请问洗手间往哪边走？”同学指给他看，还陪他走了一段。",
+        "放学时，团团变出一颗小星星送给黄发夹小云朵。她说：“明天我们还在校门口一起找教室吧。”团团点点头，心里不再是紧张，而是期待。"
+      ],
+      question: "团团在学校里学会了一个什么办法，帮助自己找到地方？",
+      answer: "不知道路时主动问人，并沿着门牌慢慢找。"
+    },
+    {
+      title: "慢半拍的小狐狸",
+      theme: "先想再做",
+      duration: "约 5 分钟",
+      summary: "小狐狸总抢着回答，结果常常答错。后来，他学会在按按钮前先数三下。",
+      paragraphs: [
+        "森林学校里，小狐狸阿橙最喜欢抢答。老师刚把题目说完，他就把前爪举得高高的，还会喊：“我知道，我知道！”",
+        "可是，阿橙常常只说了一半就发现自己看错了。一次，他把三角形说成方形；另一次，他把三只小鸟数成了四只。",
+        "同学们笑他粗心，阿橙很不好意思。他也想让答案更快、更准，可每次看到题目，他的脑子里就有一列小火车飞快往前冲。",
+        "猫头鹰老师没有批评他，只送给阿橙一个红色小沙漏。沙漏流完需要数三下。老师说：“答案出现以前，先让沙漏走完。”",
+        "第二天，老师在黑板上画了六朵花，问：“红花比黄花多几朵？”阿橙又想马上举手。他把手放下来，先找到所有红花，再找到所有黄花。",
+        "他数了三下，突然发现自己刚才把一朵粉花当成红花了。阿橙重新数了一遍，终于说出正确答案。",
+        "老师请他讲一讲怎么找到答案。阿橙说：“我先分类，再一朵一朵数，最后检查有没有看错颜色。”大家听完都鼓起掌来。",
+        "后来，小沙漏成了阿橙的好朋友。它不能替他回答问题，却会提醒他：快不是唯一本领，看清楚、想明白也很重要。",
+        "阿橙仍然喜欢抢答，但他现在会先说一句：“请让我检查一下。”他的答案慢慢变准了，也成了森林学校里最受欢迎的小侦探。"
+      ],
+      question: "阿橙用了哪三个步骤，把花数准确？",
+      answer: "先分类，再一朵一朵数，最后检查有没有看错。"
+    },
+    {
+      title: "书包里的晚安灯",
+      theme: "整理习惯",
+      duration: "约 6 分钟",
+      summary: "小满的书包每天乱成一座小山，直到书包里出现一盏会提醒她回家整理的小灯。",
+      paragraphs: [
+        "小满的书包像一个忙碌的小房间。语文书住在前门，数学书住在中间，水杯却总喜欢跑到最底下，和铅笔、纸巾挤在一起。",
+        "每天早上，小满都要把书包倒过来找东西。妈妈提醒她昨晚整理过，她却说：“我明明放好了，是它们自己跑掉的。”",
+        "一天晚上，小满发现书包里多了一盏圆圆的小灯。小灯不亮，只在书包拉链没拉好时发出轻轻的橙色光。",
+        "小灯说：“我不是替你整理书包，我只是提醒你。每收好一样东西，就把拉链拉上，看看它有没有回到自己的位置。”",
+        "小满先把书本按大小排好，再把笔袋放在侧边。她找水杯时发现，水杯已经躲在一件外套下面。她把外套拿出来，放进了另一个小口袋。",
+        "接着，她找出两张揉皱的纸。一张是明天的通知，一张是画了一半的小猫。她没有全部塞回书包，而是把通知夹进本子，把画放进文件袋。",
+        "小灯的颜色慢慢变成柔和的绿色。小满又检查了一遍：书本、水杯、笔袋、纸巾和通知，全都在自己的位置。",
+        "第二天上课，老师要大家拿出通知。小满没有翻乱书包，一下就从本子里找到了。她第一次觉得，整理不是大人额外布置的作业，而是给明天的自己留一条好走的路。",
+        "晚上回家，小灯已经不再亮了。小满把它放在桌边，对爸爸妈妈说：“今天不用小灯提醒，我自己检查过书包。”",
+        "从那天起，她的书包还是一个有很多口袋的小房间，但每个小居民都知道自己的家。"
+      ],
+      question: "小满最后把哪五样东西检查了一遍？",
+      answer: "书本、水杯、笔袋、纸巾和通知。"
+    },
+    {
+      title: "数字精灵的十格小屋",
+      theme: "数学数感",
+      duration: "约 5 分钟",
+      summary: "数字精灵要把许多小星星搬进十格小屋，她们发现凑十能让数数更容易。",
+      paragraphs: [
+        "梦里的山谷有一排十格小屋，每间小屋都有十个亮晶晶的格子。数字精灵小七和小三要把星星搬进屋里。",
+        "小七抱着七颗星星，小三抱着三颗星星。小三问：“我们一共有多少颗？”小七一颗一颗数，数到第五颗时，另一颗从手里滚了下去。",
+        "小三没有催她，而是把星星分成两排。她说：“十格小屋刚好有十个格子，我们先把七颗放进格子，再把三颗接着放。”",
+        "七颗星星先占满了七格，剩下三格。小三把三颗星星放进去，刚好把十格小屋填满。她们马上知道：七加三等于十。",
+        "第二天，小屋来了九颗蓝星星和两颗黄星星。小七又想从头数，小三提醒她：“十格小屋满了，我们看看还多出来几颗。”",
+        "她们先把九颗蓝星星放进九格，再用一颗黄星星补满。最后一颗黄星星站在小屋外面，所以一共有十加一，等于十一。",
+        "小七高兴地跳起来：“原来不用一颗一颗乱数，先找一个十，再看剩下几个。”小三在十格小屋上画了一个笑脸。",
+        "后来，她们遇到了六颗星星和四颗星星。还没等小七拿手指，小三就把四颗分成三颗和一颗，让六和四先凑成十。",
+        "小七发现，数字不是一群需要追赶的小蚂蚁，它们可以排队、可以分组，也可以找到一个舒服的位置。",
+        "从那天起，梦里的十格小屋总是亮着。每个来数星星的孩子都会记得：先找十，再看还剩几。"
+      ],
+      question: "小七和小三用什么方法，让数数更快？",
+      answer: "先用十格小屋凑十，再看外面还剩几个。"
+    }
+  ];
+
+  const DAILY_JOKES = [
+    { setup: "为什么小铅笔从不迟到？", punchline: "因为它早就“写”好了时间。" },
+    { setup: "什么门永远关不上？", punchline: "球门，因为它要等大家一起玩。" },
+    { setup: "什么鱼最会讲故事？", punchline: "章鱼，因为它有八只手可以比划。" },
+    { setup: "小闹钟为什么跑得最快？", punchline: "因为它每一秒都在赶时间。" },
+    { setup: "什么书最容易摔跤？", punchline: "跌跌撞撞的“倒”书。" },
+    { setup: "为什么云朵请假了？", punchline: "因为它今天有点“飘”不起来。" },
+    { setup: "哪一个数字最爱笑？", punchline: "0，因为它笑起来圆圆的。" },
+    { setup: "小香蕉为什么去理发？", punchline: "因为它想换个新“皮”气。" },
+    { setup: "哪种水果最会排队？", punchline: "梨，因为它总说“你梨我梨”。" },
+    { setup: "小书包为什么喜欢上学？", punchline: "因为每天都能装满新知识。" },
+    { setup: "什么星星不会发光？", punchline: "数学本上的五角星，它在等老师画上去。" },
+    { setup: "小鸭子为什么走得很慢？", punchline: "因为它要一步一步“鸭”稳一点。" }
+  ];
+
+  const DETAIL_PUZZLES = [
+    { prompt: "哪个数字躲进了另一排？", display: "7  7  7  1  7  7  7", answer: "1", options: ["7", "1", "＋"] },
+    { prompt: "哪个字母站反了方向？", display: "b  d  b  b  b  b  b", answer: "d", options: ["b", "d", "p"] },
+    { prompt: "哪个字和其他字不一样？", display: "日  日  日  目  日  日", answer: "目", options: ["日", "目", "白"] },
+    { prompt: "哪一个符号不是加号？", display: "＋  ＋  ＋  ×  ＋  ＋", answer: "×", options: ["＋", "×", "－"] },
+    { prompt: "哪个数字写了两次？", display: "3  8  6  3  9  5", answer: "3", options: ["3", "8", "5"] },
+    { prompt: "哪个颜色没有出现？", display: "红  黄  蓝  红  黄  蓝", answer: "绿", options: ["红", "蓝", "绿"] },
+    { prompt: "哪一组数量最多？", display: "●●　　 ●●●　　 ●●●●", answer: "4", options: ["2", "3", "4"] },
+    { prompt: "哪一句话少了标点？", display: "你好。\n你好！\n你好", answer: "第三句", options: ["第一句", "第二句", "第三句"] }
+  ];
+
   const CHAT_REPLIES = {
     worried: [
       "心里有一点紧张，是身体在提醒你：这件事很重要。萌可陪你把手放在小肚子上，慢慢吸气，再慢慢呼气。你觉得快要上学了，最担心哪一件事？",
@@ -228,7 +394,9 @@
   };
 
   const DEFAULT_STATE = () => ({
-    version: 1,
+    version: 2,
+    deviceId: createDeviceId(),
+    contentDate: "",
     profile: { name: "小朋友" },
     stars: 12,
     pet: {
@@ -251,6 +419,7 @@
     },
     settings: {
       voice: true,
+      sound: true,
       smartChat: true,
       mathDifficulty: "easy",
       englishPhraseIndex: 0
@@ -280,6 +449,12 @@
   let voiceTimeoutTimer = 0;
   let restTimer = 0;
   let restRemaining = 0;
+  let dailyRefreshTimer = 0;
+  let progressSyncTimer = 0;
+  let progressSyncInFlight = false;
+  let progressSyncFailed = false;
+  let storyPlaybackId = 0;
+  let dailyContentInitialized = false;
   let chatBusy = false;
   let chatServiceStatus = "unknown";
   let chatServiceModel = "";
@@ -315,10 +490,98 @@
 
   function saveState() {
     try {
+      const validDays = Object.keys(state.daily || {}).sort().slice(-45);
+      state.daily = Object.fromEntries(validDays.map((key) => [key, state.daily[key]]));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      scheduleProgressSync();
     } catch {
       showToast("这次记录暂时没有保存成功，请检查浏览器存储权限。");
     }
+  }
+
+  function setCloudSyncStatus(status, message) {
+    const element = $("#cloudSyncStatus");
+    if (!element) return;
+    element.classList.remove("is-synced", "is-error");
+    if (status === "synced") element.classList.add("is-synced");
+    if (status === "error") element.classList.add("is-error");
+    const label = element.querySelector("span");
+    if (label) label.textContent = message;
+  }
+
+  function buildProgressSnapshot() {
+    const recentDays = Object.fromEntries(
+      Object.entries(state.daily || {})
+        .sort(([a], [b]) => a.localeCompare(b))
+        .slice(-30)
+    );
+    return {
+      days: recentDays,
+      skills: state.skills,
+      stars: state.stars,
+      pet: {
+        fullness: state.pet.fullness,
+        cleanliness: state.pet.cleanliness,
+        happiness: state.pet.happiness
+      }
+    };
+  }
+
+  function scheduleProgressSync() {
+    if (!window.location.protocol.startsWith("http")) {
+      setCloudSyncStatus("local", "记录保存在本机");
+      return;
+    }
+    setCloudSyncStatus("pending", "正在同步到云端…");
+    window.clearTimeout(progressSyncTimer);
+    progressSyncTimer = window.setTimeout(syncProgressToBackend, 700);
+  }
+
+  async function syncProgressToBackend() {
+    if (progressSyncInFlight || !state.deviceId) return;
+    progressSyncInFlight = true;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 10_000);
+    try {
+      const response = await fetch(`api/progress?deviceId=${encodeURIComponent(state.deviceId)}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ progress: buildProgressSnapshot() }),
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`sync failed: ${response.status}`);
+      const now = new Date();
+      const time = new Intl.DateTimeFormat("zh-CN", { hour: "2-digit", minute: "2-digit" }).format(now);
+      progressSyncFailed = false;
+      setCloudSyncStatus("synced", `云端已同步 · ${time}`);
+    } catch {
+      progressSyncFailed = true;
+      setCloudSyncStatus("error", "本机已保存，云端暂时未连接");
+    } finally {
+      window.clearTimeout(timeout);
+      progressSyncInFlight = false;
+    }
+  }
+
+  async function checkCloudProgress() {
+    if (!window.location.protocol.startsWith("http")) {
+      setCloudSyncStatus("local", "记录保存在本机");
+      return;
+    }
+    try {
+      const response = await fetch(`api/progress?deviceId=${encodeURIComponent(state.deviceId)}`, {
+        cache: "no-store"
+      });
+      if (!response.ok) throw new Error("progress unavailable");
+      setCloudSyncStatus("synced", "云端记录已连接");
+    } catch {
+      setCloudSyncStatus("error", "云端暂时未连接，已先保存在本机");
+    }
+  }
+
+  function createDeviceId() {
+    if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+    return `mengke-${Date.now()}-${Math.random().toString(16).slice(2)}`;
   }
 
   function dateKey(date = new Date()) {
@@ -326,6 +589,15 @@
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
+  }
+
+  function daySerial(date = new Date()) {
+    return Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000);
+  }
+
+  function dailyIndex(length, offset = 0, date = new Date()) {
+    if (!length) return 0;
+    return ((daySerial(date) + offset) % length + length) % length;
   }
 
   function shiftDate(key, amount) {
@@ -342,6 +614,8 @@
     if (!state.daily[key] && create) {
       state.daily[key] = {
         tasks: {},
+        storyDone: false,
+        detectiveDone: false,
         minutes: 0,
         correct: 0,
         quiz: { pinyin: 0, hanzi: 0, english: 0, math: 0 },
@@ -351,6 +625,8 @@
     const record = state.daily[key];
     if (record) {
       record.tasks = record.tasks || {};
+      record.storyDone = Boolean(record.storyDone);
+      record.detectiveDone = Boolean(record.detectiveDone);
       record.quiz = record.quiz || { pinyin: 0, hanzi: 0, english: 0, math: 0 };
       record.minutes = Number(record.minutes) || 0;
       record.correct = Number(record.correct) || 0;
@@ -434,6 +710,217 @@
     if (hour < 14) return "吃饱、歇好，再慢慢完成今天的小计划。";
     if (hour < 18) return "一次只做一件事，做完就给自己一个笑脸。";
     return "今天做得够好啦，收好小书包，准备休息。";
+  }
+
+  function getDailyStory(date = new Date()) {
+    return DAILY_STORIES[dailyIndex(DAILY_STORIES.length, 0, date)];
+  }
+
+  function getDailyJoke(date = new Date()) {
+    return DAILY_JOKES[dailyIndex(DAILY_JOKES.length, 3, date)];
+  }
+
+  function getDetectivePuzzle(date = new Date()) {
+    return DETAIL_PUZZLES[dailyIndex(DETAIL_PUZZLES.length, 5, date)];
+  }
+
+  function renderDailyStory() {
+    const story = getDailyStory();
+    if (!story) return;
+    $("#storyTitle").textContent = story.title;
+    $("#storySummary").textContent = story.summary;
+    $("#storyDuration").textContent = story.duration;
+    $("#storyTheme").textContent = story.theme;
+    $("#storyQuestion").textContent = story.question;
+    $("#storyAnswer").textContent = story.answer || `可以这样想：${story.question.replace(/[？?]$/, "")}，先回到故事里找一找线索，再慢慢说出来。`;
+    $("#storyAnswer").hidden = true;
+    $("#storyRevealAnswer").textContent = "看看提示";
+    $("#storyDayBadge").textContent = `${new Date().getMonth() + 1}月${new Date().getDate()}日故事`;
+    $("#storyParagraphs").innerHTML = story.paragraphs
+      .map((paragraph) => `<p>${escapeHTML(paragraph)}</p>`)
+      .join("");
+    $("#storyAudioStatus").textContent = "戴上耳朵，故事要开始啦";
+    updateStoryCompletion();
+  }
+
+  function renderDailyJoke() {
+    const joke = getDailyJoke();
+    if (!joke) return;
+    $("#jokeSetup").textContent = joke.setup;
+    $("#jokePunchline").textContent = joke.punchline;
+    $("#jokePunchline").hidden = true;
+    $("#jokeRevealButton").textContent = "点我看答案";
+    $("#jokeRevealButton").disabled = false;
+  }
+
+  function renderDetectivePuzzle() {
+    const puzzle = getDetectivePuzzle();
+    const record = dayData(dateKey(), false);
+    if (!puzzle || !$("#detectiveStage")) return;
+    $("#detectivePrompt").textContent = puzzle.prompt;
+    $("#detectiveFeedback").textContent = record?.detectiveDone
+      ? "今天已经找到线索啦，明天再来当小侦探。"
+      : "慢慢看，粗心小精灵最怕认真观察。";
+    $("#detectiveStage").innerHTML = `
+      <div class="detective-question">${escapeHTML(puzzle.display)}</div>
+      <div class="detective-options">
+        ${puzzle.options.map((option) => `
+          <button type="button" data-detective-answer="${escapeHTML(option)}"
+            ${record?.detectiveDone ? "disabled" : ""}
+            class="${record?.detectiveDone && option === puzzle.answer ? "is-correct" : ""}">
+            ${escapeHTML(option)}
+          </button>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function updateStoryCompletion() {
+    const button = $("#storyCompleteButton");
+    if (!button) return;
+    const done = Boolean(dayData(dateKey(), false)?.storyDone);
+    button.classList.toggle("is-done", done);
+    button.innerHTML = done
+      ? '<svg class="icon"><use href="#icon-check"/></svg>今天的故事已经听完啦'
+      : '<svg class="icon"><use href="#icon-check"/></svg>我听完了，收下今天的成长星';
+  }
+
+  function playDailyStory() {
+    if (!state.settings.voice) {
+      showToast("语音朗读已经关闭，请先在家长设置中打开。");
+      return;
+    }
+    const story = getDailyStory();
+    const playbackId = ++storyPlaybackId;
+    const readParagraph = (index) => {
+      if (playbackId !== storyPlaybackId) return;
+      if (index >= story.paragraphs.length) {
+        $("#storyAudioStatus").textContent = "故事讲完啦，记得想一想小问题";
+        return;
+      }
+      $("#storyAudioStatus").textContent = `萌可在讲第 ${index + 1} 小段，共 ${story.paragraphs.length} 段…`;
+      speakText(index === 0 ? `今天的故事是《${story.title}》。${story.paragraphs[index]}` : story.paragraphs[index], {
+        lang: "zh-CN",
+        rate: 0.8,
+        pitch: 1.16,
+        onend: () => readParagraph(index + 1),
+        onerror: () => {
+          if (playbackId === storyPlaybackId) {
+            storyPlaybackId += 1;
+            $("#storyAudioStatus").textContent = "故事暂时停了一下，可以再点“听萌可讲故事”";
+          }
+        }
+      });
+    };
+    readParagraph(0);
+  }
+
+  function stopDailyStory() {
+    storyPlaybackId += 1;
+    window.speechSynthesis?.cancel();
+    $("#storyAudioStatus").textContent = "故事先停在这里，想听时再继续";
+  }
+
+  function markStoryComplete() {
+    const record = dayData();
+    if (record.storyDone) {
+      showToast("今天的故事已经收下啦，明天会出现新故事。");
+      return;
+    }
+    record.storyDone = true;
+    record.minutes += 6;
+    record.activity += 1;
+    state.stars += 5;
+    state.pet.happiness = Math.min(100, state.pet.happiness + 2);
+    saveState();
+    updateAll();
+    softChime("success");
+    burstConfetti(14);
+    showToast("听故事也是在学习，获得 5 颗成长星。");
+  }
+
+  function revealDailyJoke() {
+    $("#jokePunchline").hidden = false;
+    $("#jokeRevealButton").textContent = "答案揭晓啦";
+    $("#jokeRevealButton").disabled = true;
+  }
+
+  function speakDailyJoke() {
+    const joke = getDailyJoke();
+    revealDailyJoke();
+    speakText(`${joke.setup} 答案是：${joke.punchline}`, {
+      lang: "zh-CN",
+      rate: 0.8,
+      pitch: 1.18
+    });
+  }
+
+  function handleDetectiveAnswer(button) {
+    const puzzle = getDetectivePuzzle();
+    const record = dayData();
+    if (!puzzle || record.detectiveDone) return;
+    if (button.dataset.detectiveAnswer === puzzle.answer) {
+      record.detectiveDone = true;
+      record.activity += 1;
+      record.correct += 1;
+      state.stars += 3;
+      state.pet.happiness = Math.min(100, state.pet.happiness + 1);
+      saveState();
+      button.classList.add("is-correct");
+      $("#detectiveFeedback").textContent = "找到啦！你刚才不是猜的，是一点一点看出来的。";
+      $$("#detectiveStage button").forEach((item) => { item.disabled = true; });
+      softChime("success");
+      burstConfetti(10);
+      updateStatsUI();
+      updateStars();
+      updatePetUI();
+    } else {
+      button.classList.add("is-wrong");
+      window.setTimeout(() => button.classList.remove("is-wrong"), 500);
+      $("#detectiveFeedback").textContent = "再看一眼，慢慢从左往右比较，不要着急点。";
+      setMascotSpeech("把眼睛变成小放大镜，再看一次。", "neutral");
+    }
+  }
+
+  function applyDailyRotation(force = false) {
+    const today = dateKey();
+    const changed = state.contentDate !== today;
+    const shouldRender = changed || force || !dailyContentInitialized;
+    if (changed || !state.contentDate) {
+      state.contentDate = today;
+      saveState();
+    }
+    currentHanziIndex = dailyIndex(HANZI.length, 0);
+    currentEnglishIndex = dailyIndex(ENGLISH_PHRASES.length, 2);
+    currentPinyinTone = TONE_QUESTIONS[dailyIndex(TONE_QUESTIONS.length, 4)];
+    currentEnglishQuiz = null;
+    pinyinQuizLocked = false;
+    hanziQuizLocked = false;
+    englishQuizLocked = false;
+    mathQuestionNo = 1;
+    dailyContentInitialized = true;
+    renderDailyStory();
+    renderDailyJoke();
+    renderDetectivePuzzle();
+    if (shouldRender) {
+      renderHanzi();
+      renderEnglish();
+      newMathQuestion();
+      renderTasks();
+    }
+    updateAll();
+    scheduleMidnightRefresh();
+    if (force) showToast("新的一天开始啦，故事、笑话和学习内容已经更新。");
+  }
+
+  function scheduleMidnightRefresh() {
+    window.clearTimeout(dailyRefreshTimer);
+    const now = new Date();
+    const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 1);
+    dailyRefreshTimer = window.setTimeout(() => {
+      initDateAndGreeting();
+      applyDailyRotation(true);
+    }, Math.max(1_000, nextMidnight.getTime() - now.getTime()));
   }
 
   function renderTasks() {
@@ -1061,6 +1548,11 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (viewName === "home") renderTasks();
     if (viewName === "study") updateCompleteButtons();
+    if (viewName === "story") {
+      renderDailyStory();
+      renderDailyJoke();
+      renderDetectivePuzzle();
+    }
     if (viewName === "pet") updatePetUI();
     if (viewName === "progress") updateStatsUI();
     if (!options.fromHash && window.location.hash !== `#${viewName}`) {
@@ -1089,7 +1581,7 @@
 
   function applyHashRoute() {
     const [viewName, subject] = window.location.hash.replace(/^#/, "").split("/");
-    const validViews = ["home", "study", "pet", "progress"];
+    const validViews = ["home", "study", "story", "pet", "progress"];
     const validSubjects = ["pinyin", "hanzi", "english", "math"];
     if (!validViews.includes(viewName)) {
       navigate("home", { fromHash: true });
@@ -1239,6 +1731,7 @@
     updatePetUI();
     updateCompleteButtons();
     updateStatsUI();
+    updateStoryCompletion();
   }
 
   function speakText(text, options = {}) {
@@ -1264,6 +1757,8 @@
     utterance.volume = options.volume ?? 0.96;
     const voice = selectBestVoice(lang);
     if (voice) utterance.voice = voice;
+    if (typeof options.onend === "function") utterance.onend = options.onend;
+    if (typeof options.onerror === "function") utterance.onerror = options.onerror;
     window.speechSynthesis.speak(utterance);
   }
 
@@ -1300,26 +1795,38 @@
   }
 
   function softChime(type = "success") {
+    if (!state.settings.sound) return;
     try {
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
       if (!AudioContextClass) return;
       const context = new AudioContextClass();
-      const gain = context.createGain();
-      gain.gain.setValueAtTime(0.0001, context.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.035, context.currentTime + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.48);
-      gain.connect(context.destination);
-
-      const notes = type === "care" ? [523.25, 659.25] : [659.25, 783.99, 1046.5];
-      notes.forEach((frequency, index) => {
+      const notes = type === "care"
+        ? [
+            { frequency: 523.25, start: 0, duration: 0.28 },
+            { frequency: 659.25, start: 0.12, duration: 0.38 }
+          ]
+        : [
+            { frequency: 523.25, start: 0.00, duration: 0.20 },
+            { frequency: 659.25, start: 0.10, duration: 0.20 },
+            { frequency: 783.99, start: 0.20, duration: 0.22 },
+            { frequency: 1046.5, start: 0.34, duration: 0.42 },
+            { frequency: 783.99, start: 0.46, duration: 0.18 },
+            { frequency: 1046.5, start: 0.58, duration: 0.52 }
+          ];
+      notes.forEach((note) => {
         const oscillator = context.createOscillator();
+        const gain = context.createGain();
         oscillator.type = "sine";
-        oscillator.frequency.setValueAtTime(frequency, context.currentTime + index * 0.07);
+        oscillator.frequency.setValueAtTime(note.frequency, context.currentTime + note.start);
+        gain.gain.setValueAtTime(0.0001, context.currentTime + note.start);
+        gain.gain.exponentialRampToValueAtTime(0.028, context.currentTime + note.start + 0.025);
+        gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + note.start + note.duration);
         oscillator.connect(gain);
-        oscillator.start(context.currentTime + index * 0.07);
-        oscillator.stop(context.currentTime + index * 0.07 + 0.35);
+        gain.connect(context.destination);
+        oscillator.start(context.currentTime + note.start);
+        oscillator.stop(context.currentTime + note.start + note.duration + 0.03);
       });
-      window.setTimeout(() => context.close(), 900);
+      window.setTimeout(() => context.close(), 1_500);
     } catch {
       // Sound is an enhancement; the visual flow remains complete without it.
     }
@@ -2203,6 +2710,12 @@
         sendChatMessage(chatPrompt.dataset.chatPrompt);
         return;
       }
+
+      const detectiveAnswer = event.target.closest("[data-detective-answer]");
+      if (detectiveAnswer) {
+        handleDetectiveAnswer(detectiveAnswer);
+        return;
+      }
     });
 
     $("#hanziSpeakButton").addEventListener("click", speakHanzi);
@@ -2233,6 +2746,17 @@
 
     $("#mathQuestionListen").addEventListener("click", speakMathQuestion);
     $("#newMathQuestion").addEventListener("click", newMathQuestion);
+
+    $("#storyPlayButton").addEventListener("click", playDailyStory);
+    $("#storyStopButton").addEventListener("click", stopDailyStory);
+    $("#storyRevealAnswer").addEventListener("click", () => {
+      const answer = $("#storyAnswer");
+      answer.hidden = !answer.hidden;
+      $("#storyRevealAnswer").textContent = answer.hidden ? "看看提示" : "收起提示";
+    });
+    $("#storyCompleteButton").addEventListener("click", markStoryComplete);
+    $("#jokeRevealButton").addEventListener("click", revealDailyJoke);
+    $("#jokeListenButton").addEventListener("click", speakDailyJoke);
 
     $("#weatherButton").addEventListener("click", refreshWeather);
     $("#restButton").addEventListener("click", startRest);
@@ -2327,6 +2851,16 @@
         closeChat();
       }
     });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState !== "visible") return;
+      if (state.contentDate !== dateKey()) {
+        initDateAndGreeting();
+        applyDailyRotation(true);
+      } else if (progressSyncFailed) {
+        syncProgressToBackend();
+      }
+    });
+    window.addEventListener("online", () => syncProgressToBackend());
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.addEventListener?.("voiceschanged", () => {
@@ -2341,24 +2875,24 @@
     initDateAndGreeting();
     renderTasks();
     renderPinyinTiles();
-    renderHanzi();
-    renderEnglish();
-    newMathQuestion();
     initWritingBoard();
     setupSpeechRecognition();
     setupInstallPrompt();
     removeNetlifyBadge();
     registerServiceWorker();
     bindEvents();
-    updateAll();
+    applyDailyRotation(false);
+    checkCloudProgress();
     setWeatherFallback("山东 · 参考天气");
-    currentPinyinTone = randomOf(TONE_QUESTIONS);
     setMascotSpeech("我想和你一起完成今天的小任务！", "happy");
     setChatMode(state.settings.smartChat ? "unknown" : "local");
     if (!state.chat.length) renderChat();
     applyHashRoute();
 
     window.setInterval(initDateAndGreeting, 60_000);
+    window.setInterval(() => {
+      if (progressSyncFailed && navigator.onLine) syncProgressToBackend();
+    }, 30_000);
     window.setTimeout(() => {
       if (Date.now() - sessionStartedAt >= 15 * 60_000 && document.visibilityState === "visible") {
         showToast("已经学习一会儿啦，记得看看远处，眨眨眼睛。");
