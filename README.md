@@ -29,10 +29,13 @@
 
 ## 公网发布
 
-项目同时包含 Netlify Function `netlify/functions/chat.js` 和 Vercel Serverless 接口 `api/chat.js`。部署时只需要在云端项目里配置两个环境变量：
+项目同时包含 Netlify Function `netlify/functions/chat.js` 和 Vercel Serverless 接口 `api/chat.js`，支持 DeepSeek、豆包（火山方舟）和 OpenAI。只选择一家配置即可：
 
-- `OPENAI_API_KEY`：只放在云端服务端，绝不能写进前端文件。
-- `OPENAI_MODEL`：可选，默认 `gpt-4.1-mini`。
+- DeepSeek：配置 `DEEPSEEK_API_KEY`，默认模型为 `deepseek-chat`。
+- 豆包：配置 `DOUBAO_API_KEY` 和 `DOUBAO_MODEL`。
+- OpenAI：配置 `OPENAI_API_KEY`，默认模型为 `gpt-4.1-mini`。
+
+所有密钥只放在云端服务端，绝不能写进前端文件。
 
 完整步骤见 `DEPLOY.md`。Netlify 必须通过 Git 仓库进行带 Functions 的发布，单纯拖拽静态文件不会部署陪聊接口。没有配置云端模型时，聊天会自动使用改进后的本地上下文回应；配置成功后，标题旁会显示“智能陪伴 · 已连接”。
 
@@ -40,4 +43,4 @@
 
 学习内容按一年级入学常见能力顺序编排：拼音启蒙、常用字识读、20 以内数感、日常英语和生活习惯。山东各地学校使用的教材版本可能不同，因此这里提供原创练习内容，不复制或冒充某一套统一教材，具体教学进度以学校为准。
 
-智能陪聊开启时，最近对话会通过本站 Cloud Function 发送给模型生成回复，接口不保存对话，也不会把密钥发送到浏览器。它不是心理医疗工具；涉及受伤、欺负、危险或让人不舒服的秘密时，界面会明确鼓励孩子立刻告诉信任的大人。
+智能陪聊开启时，最近对话会通过本站 Cloud Function 发送给所配置的模型服务生成回复，接口不保存对话，也不会把密钥发送到浏览器。它不是心理医疗工具；涉及受伤、欺负、危险或让人不舒服的秘密时，界面会明确鼓励孩子立刻告诉信任的大人。

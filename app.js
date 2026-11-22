@@ -279,6 +279,7 @@
   let chatBusy = false;
   let chatServiceStatus = "unknown";
   let chatServiceModel = "";
+  let chatServiceProvider = "";
   let deferredInstallPrompt = null;
   let writingContext = null;
   let isDrawing = false;
@@ -1408,7 +1409,12 @@
     }
     if (status === "online") {
       mode.classList.add("is-online");
-      if (label) label.textContent = "智能陪伴 · 已连接";
+      const providerName = {
+        deepseek: "DeepSeek",
+        doubao: "豆包",
+        openai: "OpenAI"
+      }[chatServiceProvider] || "智能";
+      if (label) label.textContent = `${providerName} · 已连接`;
     } else if (status === "thinking") {
       mode.classList.add("is-online", "is-thinking");
       if (label) label.textContent = "萌可正在认真听";
@@ -1443,6 +1449,7 @@
       const data = await response.json();
       if (data?.configured) {
         chatServiceModel = data.model || "";
+        chatServiceProvider = data.provider || "";
         setChatMode("online");
         return true;
       }
@@ -1506,6 +1513,8 @@
       const data = await response.json();
       const reply = String(data?.reply || "").trim();
       if (!reply) throw new Error("empty chat reply");
+      chatServiceProvider = data.provider || chatServiceProvider;
+      chatServiceModel = data.model || chatServiceModel;
       chatServiceStatus = "online";
       setChatMode("online");
       return reply.replace(/\*\*/g, "").replace(/^["“]|["”]$/g, "").slice(0, 320);

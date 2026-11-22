@@ -4,7 +4,13 @@
 
 ## 1. 准备密钥
 
-在 OpenAI API 平台创建一个服务端 API Key。密钥只会填写在 Vercel 的环境变量里，不需要写入 `app.js` 或发给浏览器。
+选择一家支持 Chat Completions 的服务，并创建服务端 API Key：
+
+- DeepSeek：配置 `DEEPSEEK_API_KEY`。
+- 豆包（火山方舟）：配置 `DOUBAO_API_KEY` 和 `DOUBAO_MODEL`。
+- OpenAI：配置 `OPENAI_API_KEY`。
+
+密钥只填写在云端环境变量里，不需要写入 `app.js` 或发给浏览器。
 
 ## 2. 修复当前 Netlify 网站
 
@@ -17,9 +23,10 @@
 2. 把这些文件更新到 GitHub 仓库。
 3. 打开现有 Netlify 站点，进入 Site configuration → Build & deploy，将站点链接到该 Git 仓库。
 4. 如果无法给现有站点链接仓库，可以新建一个 Netlify 站点并选择 Git 导入。
-5. 添加环境变量：
-   - `OPENAI_API_KEY`：服务端 API Key。
-   - `OPENAI_MODEL`：可留空；默认 `gpt-4.1-mini`。
+5. 只选择一家添加环境变量：
+   - DeepSeek：`DEEPSEEK_API_KEY`
+   - 豆包：`DOUBAO_API_KEY`、`DOUBAO_MODEL`
+   - OpenAI：`OPENAI_API_KEY`
 6. 触发一次 Deploy，等待 Functions 构建完成。
 7. 重新打开网站并进入聊天，标题旁应显示“智能陪伴 · 已连接”。
 
@@ -37,9 +44,10 @@
 1. 登录 Vercel，选择“Add New → Project”。
 2. 连接刚才的 GitHub 仓库并导入。
 3. Framework Preset 选择 `Other`，不需要设置 Build Command。
-4. 在 Environment Variables 中添加：
-   - `OPENAI_API_KEY`：你的服务端 API Key。
-   - `OPENAI_MODEL`：可留空；默认使用 `gpt-4.1-mini`。
+4. 在 Environment Variables 中只配置一家：
+   - DeepSeek：`DEEPSEEK_API_KEY`
+   - 豆包：`DOUBAO_API_KEY`、`DOUBAO_MODEL`
+   - OpenAI：`OPENAI_API_KEY`
 5. 三个环境都建议勾选 Production、Preview、Development。
 6. 点击 Deploy。
 
@@ -57,7 +65,7 @@
 
 萌可应能继续理解“新学校、紧张、找教室”是同一条对话线，而不是重新给一段无关回答。
 
-如果显示“本地陪聊”，请检查所选平台的 `OPENAI_API_KEY` 环境变量，并在修改后重新部署。
+如果显示“本地陪聊”，请检查所选服务商的 API Key、模型权限和账户余额，并在修改后重新部署。聊天标题会显示 DeepSeek、豆包或 OpenAI，方便确认当前使用哪一家。
 
 ## 安全说明
 
