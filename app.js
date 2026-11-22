@@ -274,6 +274,10 @@
   let toastTimer = 0;
   let chatTypingTimer = 0;
   let recognition = null;
+  let voiceListening = false;
+  let voiceFinalReceived = false;
+  let voiceHadError = false;
+  let voiceTimeoutTimer = 0;
   let restTimer = 0;
   let restRemaining = 0;
   let chatBusy = false;
@@ -1670,36 +1674,140 @@
     if (!Recognition) return;
     recognition = new Recognition();
     recognition.lang = "zh-CN";
-    recognition.interimResults = false;
+    recognition.continuous = false;
+    recognition.interimResults = true;
     recognition.maxAlternatives = 1;
     recognition.onstart = () => {
+      voiceListening = true;
+      voiceFinalReceived = false;
+      voiceHadError = false;
+      $("#chatForm").classList.add("is-listening");
       $("#voiceChatButton").classList.add("is-listening");
-      $("#voiceChatButton").setAttribute("aria-label", "正在听你说话");
-      showToast("萌可在听，请慢慢说。");
+      $("#voiceChatButton").classList.remove("is-requesting");
+      $("#voiceChatButton").setAttribute("aria-pressed", "true");
+      $("#voiceChatButton").setAttribute("aria-label", "正在听你说话，再点一次可停止");
+      $("#chatInput").placeholder = "正在听你说，说完会自动发送…";
+      showToast("萌可在听啦。请靠近麦克风，慢慢说一句话。");
+      window.clearTimeout(voiceTimeoutTimer);
+      voiceTimeoutTimer = window.setTimeout(() => {
+        if (voiceListening) {
+          try {
+            recognition.stop();
+          } catch {
+            // The typed fallback remains available if stopping fails.
+          }
+          showToast("这次没有听到清楚的话，可以再点一次麦克风或直接打字。");
+        }
+      }, 15_000);
     };
     recognition.onresult = (event) => {
-      const text = event.results[0][0].transcript;
-      $("#chatInput").value = text;
-      sendChatMessage(text);
+      let interimText = "";
+      let finalText = "";
+      for (let index = event.resultIndex; index < event.results.length; index += 1) {
+        const text = event.results[index][0]?.transcript || "";
+        if (event.results[index].isFinal) finalText += text;
+        else interimText += text;
+      }
+      if (interimText) $("#chatInput").value = interimText.trim();
+      if (finalText.trim()) {
+        const text = finalText.trim();
+        voiceFinalReceived = true;
+        $("#chatInput").value = text;
+        window.clearTimeout(voiceTimeoutTimer);
+        try {
+          recognition.stop();
+        } catch {
+          // The final transcript is submitted even if recognition already ended.
+        }
+        window.setTimeout(() => sendChatMessage(text), 120);
+      }
     };
-    recognition.onerror = () => {
-      showToast("这次没有听清楚，可以再试一次或直接打字。");
+    recognition.onerror = (event) => {
+      voiceHadError = true;
+      window.clearTimeout(voiceTimeoutTimer);
+      const messages = {
+        "not-allowed": "麦克风被浏览器禁止了。请点击地址栏旁的权限图标，允许麦克风后再试。",
+        "service-not-allowed": "当前浏览器不允许使用语音识别，请直接打字，或换用最新版 Edge。",
+        "audio-capture": "没有找到可用的麦克风，请检查设备或浏览器权限。",
+        network: "浏览器的语音识别服务暂时连不上。请检查网络，或直接打字聊天。",
+        "no-speech": "没有听到清楚的声音，请靠近麦克风再说一次。",
+        "language-not-supported": "当前浏览器不支持中文语音识别，请直接打字或换用最新版 Edge。",
+        aborted: "语音输入已停止。"
+      };
+      showToast(messages[event.error] || "语音输入没有成功，可以再试一次或直接打字。");
+    };
+    recognition.onnomatch = () => {
+      voiceHadError = true;
+      showToast("萌可没有听清这句话，可以靠近麦克风慢慢再说一次。");
     };
     recognition.onend = () => {
+      voiceListening = false;
+      window.clearTimeout(voiceTimeoutTimer);
+      $("#chatForm").classList.remove("is-listening");
       $("#voiceChatButton").classList.remove("is-listening");
+      $("#voiceChatButton").classList.remove("is-requesting");
+      $("#voiceChatButton").setAttribute("aria-pressed", "false");
       $("#voiceChatButton").setAttribute("aria-label", "语音输入");
+      $("#chatInput").placeholder = chatBusy ? "萌可正在想怎么回答你…" : "把心里的话告诉萌可……";
+      if (!voiceFinalReceived && !voiceHadError && !$("#chatInput").value.trim()) {
+        showToast("没有听到清楚的话，可以再点一次麦克风慢慢说。");
+      }
     };
   }
 
-  function toggleVoiceInput() {
+  async function ensureMicrophonePermission() {
+    if (!navigator.mediaDevices?.getUserMedia) return true;
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: true, noiseSuppression: true }
+      });
+      stream.getTracks().forEach((track) => track.stop());
+      return true;
+    } catch (error) {
+      const denied = error?.name === "NotAllowedError" || error?.name === "SecurityError";
+      showToast(denied
+        ? "麦克风权限被关闭了。请点击浏览器地址栏旁的锁形图标，允许麦克风。"
+        : "暂时没有打开麦克风，请检查设备连接和浏览器权限。");
+      return false;
+    }
+  }
+
+  async function toggleVoiceInput() {
+    if (chatBusy) return;
+    if (voiceListening) {
+      try {
+        recognition.stop();
+      } catch {
+        // A stopped recognizer needs no further cleanup.
+      }
+      showToast("语音输入已停止。");
+      return;
+    }
     if (!recognition) {
-      showToast("当前浏览器不支持语音输入，可以直接打字聊天。");
+      showToast("当前浏览器不支持语音输入。请直接打字，或换用最新版 Edge。");
+      return;
+    }
+    if (!window.isSecureContext) {
+      showToast("语音输入需要 HTTPS 网页，请使用正式公网网址打开。");
+      return;
+    }
+    const button = $("#voiceChatButton");
+    button.classList.add("is-requesting");
+    button.setAttribute("aria-label", "正在打开麦克风");
+    showToast("正在打开麦克风，请在浏览器提示中点击允许。");
+    const allowed = await ensureMicrophonePermission();
+    if (!allowed) {
+      button.classList.remove("is-requesting");
+      button.setAttribute("aria-label", "语音输入");
       return;
     }
     try {
       recognition.start();
-    } catch {
-      recognition.stop();
+    } catch (error) {
+      button.classList.remove("is-requesting");
+      showToast(error?.name === "InvalidStateError"
+        ? "萌可已经在听啦，请直接说话。"
+        : "语音输入没能启动，请稍后再试或直接打字。");
     }
   }
 
@@ -1860,6 +1968,17 @@
     });
     updateInstallUI();
     showInstallBanner();
+  }
+
+  function removeNetlifyBadge() {
+    const remove = () => {
+      document
+        .querySelectorAll('#nl-badge-frame, iframe[title="Powered by Netlify"]')
+        .forEach((badge) => badge.remove());
+    };
+    remove();
+    const observer = new MutationObserver(remove);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
   function registerServiceWorker() {
@@ -2193,6 +2312,7 @@
     initWritingBoard();
     setupSpeechRecognition();
     setupInstallPrompt();
+    removeNetlifyBadge();
     registerServiceWorker();
     bindEvents();
     updateAll();
