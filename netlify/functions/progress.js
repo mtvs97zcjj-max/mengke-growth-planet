@@ -1,4 +1,6 @@
 let blobModule = null;
+const latestProgress = globalThis.__mengkeLatestProgress || new Map();
+globalThis.__mengkeLatestProgress = latestProgress;
 try {
   blobModule = require("@netlify/blobs");
 } catch {
@@ -46,11 +48,18 @@ exports.handler = async function handler(event) {
   if (typeof blobModule.connectLambda === "function") {
     blobModule.connectLambda(event);
   }
-  const store = blobModule.getStore("mengke-learning-progress");
+  const store = blobModule.getStore({
+    name: "mengke-learning-progress",
+    consistency: "strong"
+  });
   const key = `device/${deviceId}`;
 
   if (event.httpMethod === "GET") {
+    if (latestProgress.has(key)) {
+      return json(200, { ok: true, progress: latestProgress.get(key) });
+    }
     const progress = await store.get(key, { type: "json" }).catch(() => null);
+    if (progress) latestProgress.set(key, progress);
     return json(200, { ok: true, progress: progress || null });
   }
 
@@ -76,5 +85,6 @@ exports.handler = async function handler(event) {
   };
 
   await store.setJSON(key, progress);
+  latestProgress.set(key, progress);
   return json(200, { ok: true, updatedAt: progress.updatedAt });
 };
