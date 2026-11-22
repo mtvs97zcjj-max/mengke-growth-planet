@@ -455,6 +455,7 @@
   let progressSyncFailed = false;
   let storyPlaybackId = 0;
   let dailyContentInitialized = false;
+  let speechBlockedHintShown = false;
   let chatBusy = false;
   let chatServiceStatus = "unknown";
   let chatServiceModel = "";
@@ -1742,6 +1743,7 @@
     }
     const content = String(text || "").trim();
     if (!content) return;
+    window.speechSynthesis.resume();
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(content);
     const lang = options.lang || "zh-CN";
@@ -1758,8 +1760,29 @@
     const voice = selectBestVoice(lang);
     if (voice) utterance.voice = voice;
     if (typeof options.onend === "function") utterance.onend = options.onend;
-    if (typeof options.onerror === "function") utterance.onerror = options.onerror;
+    utterance.onerror = (event) => {
+      if (typeof options.onerror === "function") options.onerror(event);
+      if (!speechBlockedHintShown && ["not-allowed", "synthesis-failed"].includes(event.error)) {
+        speechBlockedHintShown = true;
+        showToast("浏览器拦截了自动朗读，请点萌可回复下面的小喇叭重听。");
+      }
+    };
     window.speechSynthesis.speak(utterance);
+  }
+
+  function primeSpeechSynthesis() {
+    if (!state.settings.voice || !("speechSynthesis" in window)) return;
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.getVoices();
+      const unlock = new SpeechSynthesisUtterance(" ");
+      unlock.lang = "zh-CN";
+      unlock.volume = 0;
+      unlock.rate = 1;
+      window.speechSynthesis.speak(unlock);
+    } catch {
+      // A direct replay control remains available if priming is blocked.
+    }
   }
 
   function selectBestVoice(lang) {
@@ -1866,6 +1889,7 @@
     document.body.style.overflow = "hidden";
     renderChat();
     checkChatService();
+    primeSpeechSynthesis();
     window.setTimeout(() => $("#chatInput").focus({ preventScroll: true }), 280);
   }
 
@@ -1900,8 +1924,15 @@
       <div class="chat-message ${message.role === "user" ? "is-user" : ""}">
         ${message.role === "user" ? "" : '<span class="chat-message-avatar">◕ᴗ◕</span>'}
         <div class="chat-bubble">
-          ${escapeHTML(message.text).replaceAll("\n", "<br>")}
-          <span class="chat-message-time">${escapeHTML(time)}</span>
+          <span class="chat-message-text">${escapeHTML(message.text).replaceAll("\n", "<br>")}</span>
+          <span class="chat-message-meta">
+            <span class="chat-message-time">${escapeHTML(time)}</span>
+            ${message.role === "user" ? "" : `
+              <button class="chat-replay-button" type="button" data-speak-chat-message="${escapeHTML(message.text)}" aria-label="朗读这条回复" title="点小喇叭重听">
+                <svg class="icon"><use href="#icon-volume"/></svg>
+              </button>
+            `}
+          </span>
         </div>
       </div>
     `;
@@ -2061,6 +2092,7 @@
   async function sendChatMessage(rawMessage) {
     const message = String(rawMessage || "").trim();
     if (!message || chatBusy) return;
+    primeSpeechSynthesis();
     setChatBusy(true);
     appendChatMessage({ role: "user", text: message, time: Date.now() });
     $("#chatInput").value = "";
@@ -2202,7 +2234,11 @@
 
   function setupSpeechRecognition() {
     const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!Recognition) return;
+    if (!Recognition) {
+      $("#voiceChatButton").classList.add("is-keyboard-dictation");
+      $("#voiceChatButton").setAttribute("aria-label", "查看苹果键盘语音输入方法");
+      return;
+    }
     recognition = new Recognition();
     recognition.lang = "zh-CN";
     recognition.continuous = false;
@@ -2266,6 +2302,9 @@
         aborted: "语音输入已停止。"
       };
       showToast(messages[event.error] || "语音输入没有成功，可以再试一次或直接打字。");
+      if (isAppleDevice() && ["not-allowed", "service-not-allowed", "language-not-supported"].includes(event.error)) {
+        showKeyboardDictationHelp();
+      }
     };
     recognition.onnomatch = () => {
       voiceHadError = true;
@@ -2284,6 +2323,23 @@
         showToast("没有听到清楚的话，可以再点一次麦克风慢慢说。");
       }
     };
+  }
+
+  function isAppleDevice() {
+    return /iphone|ipad|ipod|macintosh/i.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  }
+
+  function showKeyboardDictationHelp() {
+    const isPhoneOrPad = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const help = $("#dictationHelp");
+    $("#dictationHelpText").textContent = isPhoneOrPad
+      ? "Safari 不允许网页直接启动麦克风。请点一下输入框，再点 iPhone 或 iPad 键盘右下角的麦克风图标，说完点“完成”。"
+      : "Safari 不允许网页直接启动麦克风。请点一下输入框，再使用 Mac 输入法中的听写或按键盘上的听写快捷键。";
+    help.hidden = false;
+    $("#chatInput").focus({ preventScroll: true });
+    help.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
 
   async function ensureMicrophonePermission() {
@@ -2315,7 +2371,12 @@
       return;
     }
     if (!recognition) {
-      showToast("当前浏览器不支持语音输入。请直接打字，或换用最新版 Edge。");
+      if (isAppleDevice()) {
+        showKeyboardDictationHelp();
+        showToast("已打开苹果键盘语音输入方法。");
+      } else {
+        showToast("当前浏览器不支持语音输入。请直接打字，或换用最新版 Edge。");
+      }
       return;
     }
     if (!window.isSecureContext) {
@@ -2711,6 +2772,20 @@
         return;
       }
 
+      const replayMessage = event.target.closest("[data-speak-chat-message]");
+      if (replayMessage) {
+        if (!state.settings.voice) {
+          showToast("请先在家长设置中打开语音朗读。");
+        } else {
+          speakText(replayMessage.dataset.speakChatMessage, {
+            lang: "zh-CN",
+            rate: 0.8,
+            pitch: 1.18
+          });
+        }
+        return;
+      }
+
       const detectiveAnswer = event.target.closest("[data-detective-answer]");
       if (detectiveAnswer) {
         handleDetectiveAnswer(detectiveAnswer);
@@ -2771,6 +2846,13 @@
       sendChatMessage($("#chatInput").value);
     });
     $("#voiceChatButton").addEventListener("click", toggleVoiceInput);
+    $("#focusDictationInput").addEventListener("click", () => {
+      $("#chatInput").focus({ preventScroll: true });
+      showToast("请点键盘上的麦克风图标开始说话。");
+    });
+    $("#closeDictationHelp").addEventListener("click", () => {
+      $("#dictationHelp").hidden = true;
+    });
 
     $$("#openParentSettings, #openParentFromProgress").forEach((button) => {
       button.addEventListener("click", openSettings);

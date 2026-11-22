@@ -4766,11 +4766,39 @@ p {
 }
 
 .chat-message-time {
-  display: block;
-  margin-top: 3px;
+  display: inline-block;
   color: #aaa49a;
   font-size: 8px;
   text-align: right;
+}
+
+.chat-message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.chat-message-text {
+  display: block;
+}
+
+.chat-replay-button {
+  display: grid;
+  width: 24px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid #e1e7e3;
+  border-radius: 7px;
+  color: #5d9a88;
+  background: #f2faf7;
+  cursor: pointer;
+}
+
+.chat-replay-button .icon {
+  width: 13px;
+  height: 13px;
 }
 
 .chat-typing .chat-bubble {
@@ -4802,6 +4830,76 @@ p {
   padding: 7px 14px;
   overflow-x: auto;
   scrollbar-width: none;
+}
+
+.dictation-help {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 28px;
+  gap: 9px;
+  margin: 0 13px 7px;
+  padding: 11px;
+  border: 1px solid #cfe7df;
+  border-radius: 15px;
+  color: #5f746d;
+  background: #effaf6;
+}
+
+.dictation-help-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: #d8f2e9;
+  font-size: 18px;
+}
+
+.dictation-help strong {
+  display: block;
+  color: #42685d;
+  font-size: 10px;
+}
+
+.dictation-help p {
+  margin: 3px 0 7px;
+  color: #72827c;
+  font-size: 8.5px;
+  line-height: 1.55;
+}
+
+.dictation-focus-button {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid #b7ded2;
+  border-radius: 9px;
+  color: #407a6b;
+  background: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dictation-close-button {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: #7f8c87;
+  background: #e3f3ed;
+  cursor: pointer;
+}
+
+.dictation-close-button .icon {
+  width: 13px;
+  height: 13px;
+}
+
+.voice-chat-button.is-keyboard-dictation {
+  color: #6b786f;
+  background: #f3eee5;
 }
 
 .chat-suggestions::-webkit-scrollbar {

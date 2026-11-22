@@ -13,7 +13,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -1094,6 +1094,17 @@
       萌可是陪伴小伙伴，不会替你保守危险或受伤的秘密。遇到这些事，要告诉信任的大人。
     </div>
     <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+    <div class="dictation-help" id="dictationHelp" hidden>
+      <div class="dictation-help-icon" aria-hidden="true">🎙️</div>
+      <div>
+        <strong>苹果设备请用键盘麦克风</strong>
+        <p id="dictationHelpText">Safari 不允许网页直接启动麦克风。点一下输入框，再点 iPhone/iPad 键盘右下角的麦克风图标，说完点“完成”。</p>
+        <button class="dictation-focus-button" id="focusDictationInput" type="button">打开输入框</button>
+      </div>
+      <button class="dictation-close-button" id="closeDictationHelp" type="button" aria-label="关闭语音提示">
+        <svg class="icon"><use href="#icon-close"/></svg>
+      </button>
+    </div>
     <div class="chat-suggestions" id="chatSuggestions">
       <button type="button" data-chat-prompt="我有点紧张">我有点紧张</button>
       <button type="button" data-chat-prompt="今天很开心">今天很开心</button>
@@ -1269,6 +1280,6 @@
     </button>
   </div>
 
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
