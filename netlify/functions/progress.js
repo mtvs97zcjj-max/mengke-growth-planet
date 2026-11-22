@@ -48,10 +48,7 @@ exports.handler = async function handler(event) {
   if (typeof blobModule.connectLambda === "function") {
     blobModule.connectLambda(event);
   }
-  const store = blobModule.getStore({
-    name: "mengke-learning-progress",
-    consistency: "strong"
-  });
+  const store = blobModule.getStore("mengke-learning-progress");
   const key = `device/${deviceId}`;
 
   if (event.httpMethod === "GET") {
