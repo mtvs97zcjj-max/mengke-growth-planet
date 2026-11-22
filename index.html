@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7e7">
+  <meta name="description" content="萌可成长星球：为幼升小儿童设计的温柔学习工作台。">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="萌可成长">
+  <title>萌可成长星球</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24">
+      <path d="M3.5 10.8 12 3.6l8.5 7.2v8.1a1.6 1.6 0 0 1-1.6 1.6H5.1a1.6 1.6 0 0 1-1.6-1.6z"/>
+      <path d="M9 20.5v-6h6v6"/>
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 5.2c2.9-.7 5.5.1 8 2.2v13c-2.5-2.1-5.1-2.9-8-2.2z"/>
+      <path d="M20 5.2c-2.9-.7-5.5.1-8 2.2v13c2.5-2.1 5.1-2.9 8-2.2z"/>
+    </symbol>
+    <symbol id="icon-paw" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="15" rx="5.2" ry="4.2"/>
+      <ellipse cx="5.6" cy="9.6" rx="2.1" ry="2.7" transform="rotate(-24 5.6 9.6)"/>
+      <ellipse cx="9.7" cy="6.5" rx="2" ry="2.7" transform="rotate(-8 9.7 6.5)"/>
+      <ellipse cx="14.3" cy="6.5" rx="2" ry="2.7" transform="rotate(8 14.3 6.5)"/>
+      <ellipse cx="18.4" cy="9.6" rx="2.1" ry="2.7" transform="rotate(24 18.4 9.6)"/>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 20V10m5 10V4m5 16v-7m5 7V7"/>
+    </symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24">
+      <path d="M20.5 11.3a7.9 7.9 0 0 1-8.1 7.7 8.7 8.7 0 0 1-3.2-.6L4.5 20l1.1-4a7.2 7.2 0 0 1-1.8-4.7A7.9 7.9 0 0 1 12 3.6a7.9 7.9 0 0 1 8.5 7.7Z"/>
+      <path d="M8.5 11.5h.1m3.4 0h.1m3.4 0h.1"/>
+    </symbol>
+    <symbol id="icon-volume" viewBox="0 0 24 24">
+      <path d="M4 9.5h3.4L13 5.2v13.6l-5.6-4.3H4z"/>
+      <path d="M16 8.2a5.2 5.2 0 0 1 0 7.6m2.6-10.2a8.7 8.7 0 0 1 0 12.8"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>
+    </symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24">
+      <path d="M13.2 2.8c.8 3.3-2 4.3-2.8 7.1-.7 2.2.7 3 1.8 2.3 1.4-1 1.2-3.1 1.2-3.1 2.5 1.7 4.2 4.4 4.2 7.2 0 3.2-2.8 5.5-6.2 5.5s-6.3-2.4-6.3-5.8c0-4.6 4.2-6.5 4.2-10.3 0-1.1-.3-2.1-.8-3 1.5-.7 3.2-.7 4.7.1Z"/>
+    </symbol>
+    <symbol id="icon-feed" viewBox="0 0 24 24">
+      <path d="M5 6.2h14l-1.2 12.1a2.1 2.1 0 0 1-2.1 1.9H8.3a2.1 2.1 0 0 1-2.1-1.9z"/>
+      <path d="M4 6.2h16M9 3.8h6M9.3 11v5m5.4-5v5"/>
+    </symbol>
+    <symbol id="icon-bath" viewBox="0 0 24 24">
+      <path d="M4.2 11.5h15.6v2.8a5.3 5.3 0 0 1-5.3 5.3H9.5a5.3 5.3 0 0 1-5.3-5.3z"/>
+      <path d="M6.3 11.5V6.2a2.7 2.7 0 0 1 5.4 0M4.2 14.6l-1 2m17.6-2 1 2M8 22l.6-2.4m7.4 2.4-.6-2.4"/>
+    </symbol>
+    <symbol id="icon-shirt" viewBox="0 0 24 24">
+      <path d="m8.5 4.2-5 3 2.2 5 2.3-1.1v9h8v-9l2.3 1.1 2.2-5-5-3a4 4 0 0 1-7 0Z"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2v2.1m0 15.8V22m10-10h-2.1M4.1 12H2m17.1-7.1-1.5 1.5M6.4 17.6l-1.5 1.5m14.2 0-1.5-1.5M6.4 6.4 4.9 4.9"/>
+    </symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24">
+      <path d="M6.5 18.2a4.3 4.3 0 0 1-.7-8.5 6.1 6.1 0 0 1 11.7 1.4 3.5 3.5 0 0 1-.4 7Z"/>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24">
+      <path d="M19.7 8.5A8 8 0 1 0 20 14"/>
+      <path d="M19.7 4.4v4.1h-4.1"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m5 12.6 4.2 4.2L19.5 6.5"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5"/>
+      <path d="M12 7.2v5.1l3.5 2.1"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="m8.5 5 7 7-7 7"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24">
+      <rect x="4.8" y="10.2" width="14.4" height="10.3" rx="2.3"/>
+      <path d="M8 10.2V7.6a4 4 0 0 1 8 0v2.6M12 14.3v2.2"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="icon-mic" viewBox="0 0 24 24">
+      <rect x="8.5" y="3.3" width="7" height="11.4" rx="3.5"/>
+      <path d="M5.8 11.7a6.2 6.2 0 0 0 12.4 0M12 17.9v2.8m-3 0h6"/>
+    </symbol>
+    <symbol id="icon-send" viewBox="0 0 24 24">
+      <path d="m3.5 4.5 17 7.5-17 7.5 2.2-7.5z"/>
+      <path d="M5.7 12h14.8"/>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24">
+      <path d="M20.4 3.8C12.7 3.5 5.2 6.5 4.8 13.2c-.2 3.6 2.5 6 6 5.8 6.7-.4 9.8-8 9.6-15.2Z"/>
+      <path d="M4.5 20.5c2.1-5.3 5.8-8.8 10.8-11.3"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3.8" y="5.5" width="16.4" height="15" rx="2.3"/>
+      <path d="M7.5 3.3v4.3m9-4.3v4.3M3.8 10h16.4"/>
+    </symbol>
+  </svg>
+
+  <div class="ambient-shape ambient-shape-one"></div>
+  <div class="ambient-shape ambient-shape-two"></div>
+
+  <div class="app-shell">
+    <aside class="side-panel" aria-label="主导航">
+      <button class="brand" type="button" data-go="home" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M15 26 9 12l16 7M49 26l6-14-16 7" fill="#b8ece0" stroke="#3f5363" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="34" r="22" fill="#fff6d9" stroke="#3f5363" stroke-width="3"/><circle cx="24" cy="32" r="3" fill="#3f5363"/><circle cx="40" cy="32" r="3" fill="#3f5363"/><path d="M27 41c2.4 2.7 7.6 2.7 10 0" fill="none" stroke="#3f5363" stroke-width="2.6" stroke-linecap="round"/><circle cx="18" cy="39" r="3.3" fill="#ffb5b5" opacity=".75"/><circle cx="46" cy="39" r="3.3" fill="#ffb5b5" opacity=".75"/></svg>
+        </span>
+        <span class="brand-copy">
+          <strong>萌可成长星球</strong>
+          <small>每天一点点，快乐上小学</small>
+        </span>
+      </button>
+
+      <nav class="primary-nav">
+        <button class="nav-item is-active" type="button" data-go="home">
+          <svg class="icon"><use href="#icon-home"/></svg>
+          <span>今日</span>
+        </button>
+        <button class="nav-item" type="button" data-go="study">
+          <svg class="icon"><use href="#icon-book"/></svg>
+          <span>学习岛</span>
+        </button>
+        <button class="nav-item" type="button" data-go="pet">
+          <svg class="icon"><use href="#icon-paw"/></svg>
+          <span>萌可小屋</span>
+        </button>
+        <button class="nav-item" type="button" data-go="progress">
+          <svg class="icon"><use href="#icon-chart"/></svg>
+          <span>成长记录</span>
+        </button>
+      </nav>
+
+      <div class="side-tip">
+        <span class="side-tip-icon">小</span>
+        <div>
+          <strong>贴士</strong>
+          <p>每次学习 10～15 分钟，短时多次更适合 5 岁孩子。</p>
+        </div>
+      </div>
+
+      <button class="parent-entry" id="openParentSettings" type="button">
+        <svg class="icon"><use href="#icon-lock"/></svg>
+        <span>家长设置</span>
+      </button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-date">
+          <span class="date-kicker" id="dateKicker">星期天</span>
+          <h1 id="todayHeading">今天</h1>
+          <p id="todaySubheading">把小小的进步，变成闪闪的星星。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="weather-pill" id="weatherButton" type="button" title="获取所在地天气">
+            <span class="weather-icon" id="weatherIcon" aria-hidden="true">
+              <svg class="icon"><use href="#icon-sun"/></svg>
+            </span>
+            <span class="weather-copy">
+              <strong id="weatherTemp">16°</strong>
+              <small id="weatherText">山东 · 参考天气</small>
+            </span>
+            <svg class="weather-refresh icon" aria-hidden="true"><use href="#icon-refresh"/></svg>
+          </button>
+          <button class="star-wallet" id="starWallet" type="button" data-go="pet" aria-label="查看星星和萌可">
+            <span class="star-coin"><svg class="icon"><use href="#icon-star"/></svg></span>
+            <span>
+              <small>我的星星</small>
+              <strong id="starCount">12</strong>
+            </span>
+          </button>
+          <button class="icon-button rest-button" id="restButton" type="button" title="开始护眼休息">
+            <svg class="icon"><use href="#icon-leaf"/></svg>
+            <span>护眼休息</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="view is-active" id="view-home" data-view="home">
+        <div class="home-grid">
+          <article class="card pet-room-card">
+            <div class="card-heading room-heading">
+              <div>
+                <span class="eyebrow">MY LITTLE FRIEND</span>
+                <h2>萌可的小屋</h2>
+              </div>
+              <button class="text-button" type="button" data-go="pet">
+                去小屋
+                <svg class="icon"><use href="#icon-arrow"/></svg>
+              </button>
+            </div>
+
+            <div class="home-pet-stage">
+              <div class="stage-cloud cloud-one"></div>
+              <div class="stage-cloud cloud-two"></div>
+              <div class="sparkle sparkle-one">✦</div>
+              <div class="sparkle sparkle-two">✦</div>
+              <div class="pet-speech" id="homePetSpeech" aria-live="polite">
+                我想和你一起完成今天的小任务！
+              </div>
+              <div class="mascot-slot mascot-home" aria-label="电子宠物萌可"></div>
+              <div class="stage-floor">
+                <span></span>
+              </div>
+            </div>
+
+            <div class="pet-status-grid">
+              <div class="pet-status">
+                <span class="status-label"><span>🍰</span> 饱饱</span>
+                <div class="meter"><i id="fullnessMeter"></i></div>
+                <strong id="fullnessValue">68%</strong>
+              </div>
+              <div class="pet-status">
+                <span class="status-label"><span>🫧</span> 香香</span>
+                <div class="meter"><i id="cleanlinessMeter"></i></div>
+                <strong id="cleanlinessValue">72%</strong>
+              </div>
+              <div class="pet-status">
+                <span class="status-label"><span>💛</span> 开心</span>
+                <div class="meter"><i id="happinessMeter"></i></div>
+                <strong id="happinessValue">84%</strong>
+              </div>
+            </div>
+
+            <div class="care-actions">
+              <button class="care-button feed" type="button" data-care="feed">
+                <svg class="icon"><use href="#icon-feed"/></svg>
+                <span><strong>喂果果</strong><small>花 4 颗星星</small></span>
+              </button>
+              <button class="care-button bath" type="button" data-care="bath">
+                <svg class="icon"><use href="#icon-bath"/></svg>
+                <span><strong>洗泡泡澡</strong><small>花 4 颗星星</small></span>
+              </button>
+              <button class="care-button outfit" type="button" data-care="outfit">
+                <svg class="icon"><use href="#icon-shirt"/></svg>
+                <span><strong>换新衣服</strong><small>去衣橱看看</small></span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card daily-plan-card">
+            <div class="card-heading">
+              <div>
+                <span class="eyebrow">TODAY'S LITTLE STEPS</span>
+                <h2>今日成长清单</h2>
+              </div>
+              <div class="progress-orbit" id="planProgress" style="--progress: 0">
+                <span><strong id="planDone">0</strong>/5</span>
+              </div>
+            </div>
+            <p class="card-intro" id="planIntro">从最小的一件事开始，完成一项就会获得 10 颗星星。</p>
+            <div class="task-list" id="taskList" aria-label="每日任务"></div>
+            <div class="plan-footer">
+              <span class="gentle-note">
+                <svg class="icon"><use href="#icon-clock"/></svg>
+                今天的建议学习总时长：35～40 分钟
+              </span>
+              <button class="soft-button" id="customTaskButton" type="button">＋ 加一个小任务</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-row-heading">
+          <div>
+            <span class="eyebrow">LEARNING ISLAND</span>
+            <h2>今天想先玩哪一科？</h2>
+          </div>
+          <button class="text-button" type="button" data-go="study">
+            全部学习
+            <svg class="icon"><use href="#icon-arrow"/></svg>
+          </button>
+        </div>
+
+        <div class="subject-grid">
+          <button class="subject-card pinyin-card" type="button" data-open-subject="pinyin">
+            <span class="subject-illustration pinyin-illustration">ā<br><small>á ǎ à</small></span>
+            <span class="subject-copy">
+              <small>拼音小剧场</small>
+              <strong>听一听，辨声调</strong>
+              <span>和萌可一起说标准音</span>
+            </span>
+            <span class="subject-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span>
+          </button>
+          <button class="subject-card hanzi-card" type="button" data-open-subject="hanzi">
+            <span class="subject-illustration hanzi-illustration">日</span>
+            <span class="subject-copy">
+              <small>汉字藏宝图</small>
+              <strong>认字、读词、写一写</strong>
+              <span>每天认识 3～5 个新朋友</span>
+            </span>
+            <span class="subject-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span>
+          </button>
+          <button class="subject-card english-card" type="button" data-open-subject="english">
+            <span class="subject-illustration english-illustration">Hi!</span>
+            <span class="subject-copy">
+              <small>English 小花园</small>
+              <strong>磨耳朵，大胆开口</strong>
+              <span>把英语放进生活小情境</span>
+            </span>
+            <span class="subject-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span>
+          </button>
+          <button class="subject-card math-card" type="button" data-open-subject="math">
+            <span class="subject-illustration math-illustration">3+2</span>
+            <span class="subject-copy">
+              <small>数学游乐园</small>
+              <strong>数一数，答一答</strong>
+              <span>用看得见的方式理解数字</span>
+            </span>
+            <span class="subject-arrow"><svg class="icon"><use href="#icon-arrow"/></svg></span>
+          </button>
+        </div>
+
+        <div class="home-bottom-grid">
+          <article class="card parent-note-card">
+            <div class="parent-note-mark"><svg class="icon"><use href="#icon-leaf"/></svg></div>
+            <div>
+              <span class="eyebrow">给家长的小提示</span>
+              <h3>先陪伴，再放手</h3>
+              <p>开始时和孩子一起读题、操作，熟练后让她自己点选。夸赞具体行为，比如“你刚才听得很认真”。</p>
+            </div>
+          </article>
+          <article class="card weekly-glance-card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">THIS WEEK</span>
+                <h3>本周小脚印</h3>
+              </div>
+              <span class="streak-pill"><svg class="icon"><use href="#icon-flame"/></svg><span id="streakDays">1</span> 天</span>
+            </div>
+            <div class="mini-bars" id="homeMiniBars" aria-label="本周成长柱状图"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-study" data-view="study" hidden>
+        <div class="study-hero card">
+          <div class="study-hero-copy">
+            <span class="eyebrow">学习岛 · 每天一小步</span>
+            <h2>先听，再说，最后认一认。</h2>
+            <p>每个小关卡只需 3～8 分钟。遇到不会的没关系，点一点萌可，她会再慢慢讲一次。</p>
+            <div class="method-chips" aria-label="学习方法">
+              <span><b>1</b> 看一看</span>
+              <span><b>2</b> 听一听</span>
+              <span><b>3</b> 说一说</span>
+              <span><b>4</b> 自己答</span>
+            </div>
+          </div>
+          <div class="study-hero-pet">
+            <div class="mini-speech">答错也是在长本领哦！</div>
+            <span class="hero-mascot-face" aria-hidden="true">◕ᴗ◕</span>
+            <span class="hero-planet">✦</span>
+          </div>
+        </div>
+
+        <div class="subject-tabs" role="tablist" aria-label="选择学习科目">
+          <button class="subject-tab is-active" type="button" role="tab" aria-selected="true" data-subject="pinyin">
+            <span class="tab-emoji">ā</span> 拼音
+          </button>
+          <button class="subject-tab" type="button" role="tab" aria-selected="false" data-subject="hanzi">
+            <span class="tab-emoji">字</span> 识字
+          </button>
+          <button class="subject-tab" type="button" role="tab" aria-selected="false" data-subject="english">
+            <span class="tab-emoji">Aa</span> 英语
+          </button>
+          <button class="subject-tab" type="button" role="tab" aria-selected="false" data-subject="math">
+            <span class="tab-emoji">＋</span> 数学
+          </button>
+        </div>
+
+        <div class="subject-panel is-active" id="panel-pinyin" data-panel="pinyin">
+          <div class="learning-layout">
+            <article class="card lesson-main-card">
+              <div class="card-heading">
+                <div>
+                  <span class="eyebrow">拼音小剧场</span>
+                  <h2>声调像一条音乐小路</h2>
+                </div>
+                <span class="soft-badge">萌可语速 0.8</span>
+              </div>
+              <p class="lesson-lead">点小喇叭，听萌可把四声读成一条会起伏的小路。先听，再跟着做手势。</p>
+
+              <div class="tone-demo-grid" id="toneDemoGrid">
+                <button type="button" class="tone-tile tone-one" data-tone="1">
+                  <span class="tone-mark">ˉ</span>
+                  <strong>一声</strong>
+                  <small>平平的</small>
+                  <b>bā</b>
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                </button>
+                <button type="button" class="tone-tile tone-two" data-tone="2">
+                  <span class="tone-mark">ˊ</span>
+                  <strong>二声</strong>
+                  <small>向上爬</small>
+                  <b>bá</b>
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                </button>
+                <button type="button" class="tone-tile tone-three" data-tone="3">
+                  <span class="tone-mark">ˇ</span>
+                  <strong>三声</strong>
+                  <small>先下再上</small>
+                  <b>bǎ</b>
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                </button>
+                <button type="button" class="tone-tile tone-four" data-tone="4">
+                  <span class="tone-mark">ˋ</span>
+                  <strong>四声</strong>
+                  <small>一下滑下去</small>
+                  <b>bà</b>
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                </button>
+              </div>
+
+              <div class="pinyin-family">
+                <div class="pinyin-family-title">
+                  <div>
+                    <strong>声母小火车</strong>
+                    <p>从熟悉的声音开始认，不急着一次全记完。</p>
+                  </div>
+                  <button class="speak-all-button" id="speakInitials" type="button">
+                    <svg class="icon"><use href="#icon-volume"/></svg>
+                    听一遍
+                  </button>
+                </div>
+                <div class="pinyin-tile-row" id="initialTiles"></div>
+              </div>
+
+              <div class="pinyin-family">
+                <div class="pinyin-family-title">
+                  <div>
+                    <strong>韵母小花园</strong>
+                    <p>张大嘴巴，注意口形；点每个拼音都可以听。</p>
+                  </div>
+                </div>
+                <div class="pinyin-tile-row final-row" id="finalTiles"></div>
+              </div>
+            </article>
+
+            <aside class="learning-side-stack">
+              <article class="card mini-quiz-card" id="pinyinQuizCard">
+                <div class="quiz-topline">
+                  <span class="eyebrow">听音辨调</span>
+                  <span class="score-pill">答对 <b id="pinyinCorrectCount">0</b> 题</span>
+                </div>
+                <h3>听一听，是第几声？</h3>
+                <button class="listen-orb" id="pinyinListen" type="button" aria-label="播放拼音声音">
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                  <span>点我听</span>
+                </button>
+                <div class="answer-chips" id="pinyinAnswers">
+                  <button type="button" data-answer="1">一声 ˉ</button>
+                  <button type="button" data-answer="2">二声 ˊ</button>
+                  <button type="button" data-answer="3">三声 ˇ</button>
+                  <button type="button" data-answer="4">四声 ˋ</button>
+                </div>
+                <p class="quiz-feedback" id="pinyinFeedback">别着急，先听两遍也没关系。</p>
+                <button class="complete-lesson-button" type="button" data-complete-task="pinyin_dictation">
+                  <svg class="icon"><use href="#icon-check"/></svg>
+                  完成今天的拼音练习
+                </button>
+              </article>
+
+              <article class="card method-note">
+                <span class="method-note-icon">听</span>
+                <div>
+                  <strong>为什么先听？</strong>
+                  <p>5 岁孩子对声音敏感。先建立“声音—口形”的连接，再学习认读和书写，负担更小。</p>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </div>
+
+        <div class="subject-panel" id="panel-hanzi" data-panel="hanzi" hidden>
+          <div class="learning-layout hanzi-layout">
+            <article class="card hanzi-stage-card">
+              <div class="card-heading">
+                <div>
+                  <span class="eyebrow">汉字藏宝图</span>
+                  <h2>今天的汉字朋友</h2>
+                </div>
+                <span class="soft-badge" id="hanziCounter">1 / 20</span>
+              </div>
+              <div class="hanzi-showcase">
+                <button class="hanzi-big-card" id="hanziSpeakButton" type="button" aria-label="播放汉字读音">
+                  <span class="hanzi-character" id="hanziCharacter">日</span>
+                  <span class="hanzi-pinyin" id="hanziPinyin">rì</span>
+                  <span class="hanzi-listen">
+                    <svg class="icon"><use href="#icon-volume"/></svg>
+                    听萌可读
+                  </span>
+                </button>
+                <div class="hanzi-details">
+                  <span class="detail-label">它像什么？</span>
+                  <h3 id="hanziMeaning">太阳圆圆的样子</h3>
+                  <p id="hanziWords">红日 · 日出 · 日子</p>
+                  <button class="example-sentence" id="hanziSentenceButton" type="button">
+                    <span id="hanziSentence">红红的太阳升起来了。</span>
+                    <svg class="icon"><use href="#icon-volume"/></svg>
+                  </button>
+                  <div class="hanzi-nav">
+                    <button class="round-button" id="hanziPrev" type="button" aria-label="上一个汉字">‹</button>
+                    <span>看 · 读 · 写</span>
+                    <button class="round-button" id="hanziNext" type="button" aria-label="下一个汉字">›</button>
+                  </div>
+                </div>
+              </div>
+              <div class="write-section">
+                <div class="write-heading">
+                  <div>
+                    <strong>在田字格里写一写</strong>
+                    <p>用小手画一画，不求完美，先感受笔画的走向。</p>
+                  </div>
+                  <button class="soft-button" id="clearWriting" type="button">清空</button>
+                </div>
+                <div class="writing-board-wrap">
+                  <canvas id="writingBoard" width="720" height="360" aria-label="汉字书写练习区"></canvas>
+                  <span class="writing-hint">在这里写 ✨</span>
+                </div>
+              </div>
+            </article>
+
+            <aside class="learning-side-stack">
+              <article class="card recognition-card">
+                <span class="eyebrow">眼睛小侦探</span>
+                <h3>认出刚认识的“<span id="hanziQuizCharacter">日</span>”字</h3>
+                <p>听读音，再从三个字里找出来。</p>
+                <button class="listen-wide-button" id="hanziQuizListen" type="button">
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                  听读音
+                </button>
+                <div class="hanzi-choice-grid" id="hanziChoices"></div>
+                <p class="quiz-feedback" id="hanziFeedback">认错了也很正常，我们再找一次。</p>
+                <button class="complete-lesson-button" type="button" data-complete-task="hanzi_recognition">
+                  <svg class="icon"><use href="#icon-check"/></svg>
+                  完成今天的识字
+                </button>
+              </article>
+
+              <article class="card method-note">
+                <span class="method-note-icon">用</span>
+                <div>
+                  <strong>字要放进生活里</strong>
+                  <p>看到“日”时，可以指指日历、说说日出。字和真实经历连在一起，记忆会更牢。</p>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </div>
+
+        <div class="subject-panel" id="panel-english" data-panel="english" hidden>
+          <div class="learning-layout">
+            <article class="card english-stage-card">
+              <div class="card-heading">
+                <div>
+                  <span class="eyebrow">English 小花园</span>
+                  <h2>大胆开口，就很棒</h2>
+                </div>
+                <span class="soft-badge">慢速温柔发音</span>
+              </div>
+              <div class="english-hero-line">
+                <div class="english-bubble-art">
+                  <span class="english-cloud cloud-a">Hello!</span>
+                  <span class="english-cloud cloud-b">Hi!</span>
+                  <span class="english-star">✦</span>
+                </div>
+                <div class="english-phrase-copy">
+                  <small>今天的问候</small>
+                  <h3 id="englishPhrase">Hello! How are you?</h3>
+                  <p id="englishPhraseTranslation">你好！你好吗？</p>
+                  <button class="listen-wide-button light" id="englishPhraseListen" type="button">
+                    <svg class="icon"><use href="#icon-volume"/></svg>
+                    听萌可慢慢说
+                  </button>
+                  <button class="english-next-phrase" id="englishPhraseNext" type="button">
+                    换一句
+                    <svg class="icon"><use href="#icon-arrow"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="word-garden">
+                <div class="word-garden-heading">
+                  <strong>单词小花圃</strong>
+                  <span>点单词听发音</span>
+                </div>
+                <div class="english-word-grid" id="englishWordGrid"></div>
+              </div>
+            </article>
+
+            <aside class="learning-side-stack">
+              <article class="card english-quiz-card">
+                <span class="eyebrow">听音选图</span>
+                <h3>萌可说的是哪一个？</h3>
+                <button class="listen-orb english-orb" id="englishQuizListen" type="button">
+                  <svg class="icon"><use href="#icon-volume"/></svg>
+                  <span>Listen</span>
+                </button>
+                <div class="picture-choice-grid" id="englishChoices"></div>
+                <p class="quiz-feedback" id="englishFeedback">可以用耳朵先找到答案。</p>
+                <button class="complete-lesson-button" type="button" data-complete-task="english_reading">
+                  <svg class="icon"><use href="#icon-check"/></svg>
+                  完成今天的英语
+                </button>
+              </article>
+              <article class="card method-note">
+                <span class="method-note-icon">说</span>
+                <div>
+                  <strong>不追着纠错</strong>
+                  <p>先鼓励孩子愿意开口，再温柔重复正确说法。英语启蒙更看重兴趣和节奏感。</p>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </div>
+
+        <div class="subject-panel" id="panel-math" data-panel="math" hidden>
+          <div class="learning-layout math-learning-layout">
+            <article class="card math-game-card">
+              <div class="math-game-top">
+                <div>
+                  <span class="eyebrow">数学游乐园</span>
+                  <h2>数一数，自己找出答案</h2>
+                </div>
+                <div class="game-scoreboard">
+                  <span>连续答对</span>
+                  <strong id="mathStreak">0</strong>
+                  <small>题</small>
+                </div>
+              </div>
+
+              <div class="difficulty-switch" role="group" aria-label="选择难度">
+                <button class="is-active" type="button" data-difficulty="easy">启蒙 · 10以内</button>
+                <button type="button" data-difficulty="challenge">挑战 · 20以内</button>
+              </div>
+
+              <div class="math-question-area">
+                <div class="math-question-header">
+                  <span class="question-number" id="mathQuestionNumber">第 1 题</span>
+                  <button class="math-listen-button" id="mathQuestionListen" type="button">
+                    <svg class="icon"><use href="#icon-volume"/></svg>
+                    听题目
+                  </button>
+                </div>
+                <h3 id="mathQuestionText">3 + 2 = ?</h3>
+                <p id="mathQuestionHint">先数一数左边和右边，一共有多少个？</p>
+                <div class="math-visual" id="mathVisual" aria-label="图形提示"></div>
+                <div class="math-answer-grid" id="mathAnswers"></div>
+                <p class="math-feedback" id="mathFeedback">慢慢想，萌可陪着你。</p>
+              </div>
+              <div class="math-tool-row">
+                <button class="soft-button" id="newMathQuestion" type="button">
+                  <svg class="icon"><use href="#icon-refresh"/></svg>
+                  换一题
+                </button>
+                <span>不用计时，想清楚比答得快更重要。</span>
+              </div>
+            </article>
+
+            <aside class="learning-side-stack">
+              <article class="card number-sense-card">
+                <span class="eyebrow">数感小技巧</span>
+                <h3>十格阵</h3>
+                <p>用小手跟着数，慢慢建立“凑十”的感觉。</p>
+                <div class="ten-frame" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <button class="complete-lesson-button" type="button" data-complete-task="math_game">
+                  <svg class="icon"><use href="#icon-check"/></svg>
+                  完成今天的数学
+                </button>
+              </article>
+              <article class="card method-note">
+                <span class="method-note-icon">手</span>
+                <div>
+                  <strong>让数学看得见</strong>
+                  <p>先用扣子、积木或手指摆一摆，再把答案点出来。具象操作是一年级数感的重要基础。</p>
+                </div>
+              </article>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-pet" data-view="pet" hidden>
+        <div class="pet-room-hero card">
+          <div class="pet-room-sky">
+            <span class="sky-star sky-star-one">✦</span>
+            <span class="sky-star sky-star-two">✧</span>
+            <span class="sky-star sky-star-three">✦</span>
+            <div class="rainbow">⌒</div>
+            <div class="hill hill-back"></div>
+            <div class="hill hill-front"></div>
+            <div class="little-house">
+              <span class="house-roof"></span>
+              <span class="house-window">♥</span>
+            </div>
+          </div>
+          <div class="pet-room-copy">
+            <span class="eyebrow">萌可小屋</span>
+            <h2><span id="childNameGreeting">小朋友</span>，欢迎回家！</h2>
+            <p id="petRoomMessage">你来了，我的小尾巴都开心得摇起来啦。</p>
+            <div class="room-wallet">
+              <span class="star-coin large"><svg class="icon"><use href="#icon-star"/></svg></span>
+              <span><strong id="petStarCount">12</strong><small>颗星星</small></span>
+              <button id="earnStarsButton" type="button" data-go="home">去完成任务</button>
+            </div>
+          </div>
+          <div class="pet-room-player">
+            <div class="pet-room-speech" id="petRoomSpeech">今天想给我换哪件衣服呀？</div>
+            <div class="mascot-slot mascot-petroom" aria-label="萌可在小屋里"></div>
+            <div class="room-grass grass-left"></div>
+            <div class="room-grass grass-right"></div>
+            <div class="action-bubbles" id="actionBubbles" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="pet-dashboard">
+          <div class="pet-care-panel card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">CARE TIME</span>
+                <h3>照顾萌可</h3>
+              </div>
+              <span class="care-tip">完成任务，就能照顾她啦</span>
+            </div>
+            <div class="care-stat-list">
+              <div class="care-stat-row">
+                <span class="care-emoji">🍰</span>
+                <div class="care-stat-copy">
+                  <span><b>饱饱</b><small>肚子咕噜噜时会想吃果果</small></span>
+                  <div class="meter large"><i id="petFullnessMeter"></i></div>
+                </div>
+                <strong id="petFullnessValue">68%</strong>
+              </div>
+              <div class="care-stat-row">
+                <span class="care-emoji">🫧</span>
+                <div class="care-stat-copy">
+                  <span><b>香香</b><small>泡泡澡会让毛发软乎乎的</small></span>
+                  <div class="meter large"><i id="petCleanlinessMeter"></i></div>
+                </div>
+                <strong id="petCleanlinessValue">72%</strong>
+              </div>
+              <div class="care-stat-row">
+                <span class="care-emoji">💛</span>
+                <div class="care-stat-copy">
+                  <span><b>开心</b><small>一起聊天和完成任务会变开心</small></span>
+                  <div class="meter large"><i id="petHappinessMeter"></i></div>
+                </div>
+                <strong id="petHappinessValue">84%</strong>
+              </div>
+            </div>
+            <div class="care-button-grid">
+              <button class="big-care-button feed" type="button" data-care="feed">
+                <span><svg class="icon"><use href="#icon-feed"/></svg></span>
+                <strong>喂果果</strong>
+                <small>- 4 星星</small>
+              </button>
+              <button class="big-care-button bath" type="button" data-care="bath">
+                <span><svg class="icon"><use href="#icon-bath"/></svg></span>
+                <strong>洗泡泡澡</strong>
+                <small>- 4 星星</small>
+              </button>
+              <button class="big-care-button play" type="button" data-care="play">
+                <span>🎈</span>
+                <strong>玩一会儿</strong>
+                <small>- 2 星星</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="wardrobe-panel card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">DRESS UP</span>
+                <h3>萌可衣橱</h3>
+              </div>
+              <span class="soft-badge">换装免费</span>
+            </div>
+            <p class="wardrobe-intro">选出今天最喜欢的一套吧。</p>
+            <div class="outfit-grid" id="outfitGrid">
+              <button class="outfit-card is-selected" type="button" data-outfit="mint">
+                <span class="outfit-preview preview-mint"><i>◡</i></span>
+                <strong>薄荷糖</strong>
+              </button>
+              <button class="outfit-card" type="button" data-outfit="berry">
+                <span class="outfit-preview preview-berry"><i>◡</i></span>
+                <strong>莓莓派</strong>
+              </button>
+              <button class="outfit-card" type="button" data-outfit="sky">
+                <span class="outfit-preview preview-sky"><i>◡</i></span>
+                <strong>晴空蓝</strong>
+              </button>
+              <button class="outfit-card" type="button" data-outfit="sunset">
+                <span class="outfit-preview preview-sunset"><i>◡</i></span>
+                <strong>南瓜橙</strong>
+              </button>
+            </div>
+            <div class="accessory-row">
+              <span>小配饰</span>
+              <div id="accessoryOptions">
+                <button class="accessory-button is-selected" type="button" data-accessory="crown" aria-label="星星发饰">⭐</button>
+                <button class="accessory-button" type="button" data-accessory="bow" aria-label="蝴蝶结">🎀</button>
+                <button class="accessory-button" type="button" data-accessory="beret" aria-label="贝雷帽">🎨</button>
+                <button class="accessory-button" type="button" data-accessory="none" aria-label="不戴配饰">－</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pet-bottom-grid">
+          <article class="card chat-invite-card">
+            <div class="chat-invite-face" aria-hidden="true">◕ᴗ◕</div>
+            <div>
+              <span class="eyebrow">想说悄悄话吗？</span>
+              <h3>萌可会认真听你说。</h3>
+              <p>开心的事、小小的心事，或者今天不想写作业，都可以告诉她。</p>
+            </div>
+            <button class="primary-button" id="openChatFromPet" type="button">
+              <svg class="icon"><use href="#icon-chat"/></svg>
+              和萌可聊聊
+            </button>
+          </article>
+          <article class="card badge-card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">TINY ACHIEVEMENTS</span>
+                <h3>最近的小勋章</h3>
+              </div>
+            </div>
+            <div class="badge-grid">
+              <div class="mini-badge unlocked"><span>🌱</span><b>勇敢开始</b><small>完成第一项任务</small></div>
+              <div class="mini-badge unlocked"><span>🎧</span><b>小耳朵</b><small>听过拼音示范</small></div>
+              <div class="mini-badge"><span>🌈</span><b>连续 7 天</b><small>继续慢慢来</small></div>
+            </div>
+          </article>
+        </div>
+
+        <p class="curriculum-note">
+          学习顺序参考一年级入学常见能力：拼音启蒙、常用字识读、20 以内数感、日常英语。学校教材版本可能不同，具体进度请以班级教学为准。
+        </p>
+      </section>
+
+      <section class="view" id="view-progress" data-view="progress" hidden>
+        <div class="progress-hero card">
+          <div>
+            <span class="eyebrow">成长记录 · 只看自己的进步</span>
+            <h2>每一小步，都算数。</h2>
+            <p>不比较、不抢跑。我们更关注今天有没有开心地听、认真地试、主动地说。</p>
+          </div>
+          <div class="progress-hero-medal">
+            <span class="medal-rays">✦</span>
+            <span class="medal-star">★</span>
+            <strong id="progressHeroDays">1</strong>
+            <small>坚持天</small>
+          </div>
+        </div>
+
+        <div class="stats-cards">
+          <article class="stat-card">
+            <span class="stat-icon sky"><svg class="icon"><use href="#icon-calendar"/></svg></span>
+            <div><small>本周完成任务</small><strong id="statTasks">0</strong><span>个小脚印</span></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon peach"><svg class="icon"><use href="#icon-clock"/></svg></span>
+            <div><small>本周陪伴学习</small><strong id="statMinutes">0</strong><span>分钟</span></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon mint"><svg class="icon"><use href="#icon-star"/></svg></span>
+            <div><small>本周答对</small><strong id="statCorrect">0</strong><span>道小问题</span></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon butter"><svg class="icon"><use href="#icon-flame"/></svg></span>
+            <div><small>连续成长</small><strong id="statStreak">1</strong><span>天</span></div>
+          </article>
+        </div>
+
+        <div class="stats-main-grid">
+          <article class="card week-chart-card">
+            <div class="card-heading">
+              <div>
+                <span class="eyebrow">SEVEN DAYS</span>
+                <h2>七日成长能量</h2>
+              </div>
+              <span class="soft-badge">完成任务 + 答对题目</span>
+            </div>
+            <div class="large-bar-chart" id="weeklyChart" aria-label="七日成长能量柱状图"></div>
+            <div class="chart-legend">
+              <span><i class="legend-task"></i> 完成计划</span>
+              <span><i class="legend-quiz"></i> 学习练习</span>
+            </div>
+          </article>
+
+          <article class="card skill-card">
+            <div class="card-heading compact">
+              <div>
+                <span class="eyebrow">LITTLE SKILLS</span>
+                <h3>能力小花圃</h3>
+              </div>
+            </div>
+            <div class="skill-list" id="skillList"></div>
+            <p class="skill-footnote">进度按本机实际练习累计，清零记录后会重新开始。</p>
+          </article>
+        </div>
+
+        <div class="stats-bottom-grid">
+          <article class="card weekly-report-card">
+            <span class="eyebrow">给家长的一周观察</span>
+            <h3 id="weeklyReportTitle">先从小小的坚持开始</h3>
+            <p id="weeklyReportText">本周还没有太多记录。可以从每天完成 1 项任务开始，让孩子体验“我能做到”的成就感。</p>
+            <div class="report-tips">
+              <span><b>①</b> 夸具体过程，不只夸“真聪明”</span>
+              <span><b>②</b> 学习 10～15 分钟，休息远眺</span>
+              <span><b>③</b> 允许孩子自己选学习顺序</span>
+            </div>
+          </article>
+          <article class="card parent-tools-card">
+            <div class="parent-tools-icon"><svg class="icon"><use href="#icon-lock"/></svg></div>
+            <div>
+              <h3>家长设置</h3>
+              <p>修改孩子昵称、查看数据说明或重新开始记录。</p>
+              <button class="soft-button" id="openParentFromProgress" type="button">打开设置</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <span>萌可成长星球 · 学习数据保存在本机 · <a href="privacy.html">隐私说明</a></span>
+        <span>陪你慢慢长大，不催不赶。</span>
+      </footer>
+    </main>
+
+    <nav class="bottom-nav" aria-label="小屏主导航">
+      <button class="bottom-nav-item is-active" type="button" data-go="home">
+        <svg class="icon"><use href="#icon-home"/></svg><span>今日</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-go="study">
+        <svg class="icon"><use href="#icon-book"/></svg><span>学习岛</span>
+      </button>
+      <button class="bottom-nav-item pet-nav-item" type="button" data-go="pet">
+        <span class="bottom-pet"><svg class="icon"><use href="#icon-paw"/></svg></span><span>萌可</span>
+      </button>
+      <button class="bottom-nav-item" type="button" data-go="progress">
+        <svg class="icon"><use href="#icon-chart"/></svg><span>成长</span>
+      </button>
+      <button class="bottom-nav-item" id="openChatBottom" type="button">
+        <svg class="icon"><use href="#icon-chat"/></svg><span>聊天</span>
+      </button>
+    </nav>
+  </div>
+
+  <button class="chat-fab" id="openChatFab" type="button" aria-label="和萌可聊天">
+    <span class="chat-fab-face" aria-hidden="true"><i></i><i></i><b>ᴗ</b></span>
+    <span>和萌可聊聊</span>
+  </button>
+
+  <div class="chat-overlay" id="chatOverlay" hidden></div>
+  <aside class="chat-drawer" id="chatDrawer" aria-label="和萌可聊天" aria-hidden="true">
+    <header class="chat-header">
+      <div class="chat-avatar">
+        <span>◕ᴗ◕</span>
+        <i></i>
+      </div>
+      <div>
+        <strong>萌可</strong>
+        <span class="chat-mode" id="chatMode"><i></i><b>正在准备聊天</b></span>
+      </div>
+      <button class="chat-close" id="closeChat" type="button" aria-label="关闭聊天">
+        <svg class="icon"><use href="#icon-close"/></svg>
+      </button>
+    </header>
+    <div class="chat-safety">
+      <svg class="icon"><use href="#icon-leaf"/></svg>
+      萌可是陪伴小伙伴，不会替你保守危险或受伤的秘密。遇到这些事，要告诉信任的大人。
+    </div>
+    <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button type="button" data-chat-prompt="我有点紧张">我有点紧张</button>
+      <button type="button" data-chat-prompt="今天很开心">今天很开心</button>
+      <button type="button" data-chat-prompt="不想写作业">不想写作业</button>
+      <button type="button" data-chat-prompt="怎么交朋友">怎么交朋友</button>
+    </div>
+    <form class="chat-composer" id="chatForm">
+      <button class="voice-chat-button" id="voiceChatButton" type="button" aria-label="语音输入" title="语音输入">
+        <svg class="icon"><use href="#icon-mic"/></svg>
+      </button>
+      <input id="chatInput" type="text" autocomplete="off" maxlength="120" placeholder="把心里的话告诉萌可……" aria-label="聊天内容">
+      <button class="send-button" type="submit" aria-label="发送">
+        <svg class="icon"><use href="#icon-send"/></svg>
+      </button>
+    </form>
+  </aside>
+
+  <dialog class="settings-dialog" id="settingsDialog">
+    <form method="dialog" class="settings-inner" id="settingsForm">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">家长设置</span>
+          <h2>让工作台更适合孩子</h2>
+        </div>
+        <button class="dialog-close" value="cancel" aria-label="关闭设置">
+          <svg class="icon"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+      <label class="field-label" for="childNameInput">孩子的昵称</label>
+      <input class="text-field" id="childNameInput" type="text" maxlength="12" placeholder="例如：朵朵">
+
+      <div class="setting-row">
+        <div>
+          <strong>语音音量</strong>
+          <p>所有朗读都采用温柔慢速；拼音语速为 0.8。</p>
+        </div>
+        <button class="toggle-button is-on" id="voiceToggle" type="button" aria-pressed="true">
+          <span></span>
+          <b>已开启</b>
+        </button>
+      </div>
+
+      <div class="setting-row">
+        <div>
+          <strong>智能陪聊</strong>
+          <p>开启后，萌可会结合前面的对话自然回应；断网时自动切回本地陪伴。</p>
+        </div>
+        <button class="toggle-button is-on" id="smartChatToggle" type="button" aria-pressed="true">
+          <span></span>
+          <b>已开启</b>
+        </button>
+      </div>
+
+      <div class="setting-row install-setting-row">
+        <div>
+          <strong>安装到桌面</strong>
+          <p id="installHelpText">安装后可以像普通应用一样，从桌面图标直接打开。</p>
+        </div>
+        <button class="soft-button install-app-button" id="installAppButton" type="button">安装</button>
+      </div>
+
+      <div class="privacy-note">
+        <svg class="icon"><use href="#icon-lock"/></svg>
+        <p>学习记录留在当前浏览器。开启智能陪聊时，最近几条对话会发送给本站的云端 AI 服务生成回复；请不要输入住址、学校全名或密码等信息。</p>
+      </div>
+
+      <div class="settings-actions">
+        <button class="danger-button" id="resetDataButton" type="button">清空全部记录</button>
+        <button class="primary-button" id="saveSettingsButton" value="default" type="submit">保存设置</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="custom-task-dialog" id="customTaskDialog">
+    <form method="dialog" class="custom-task-inner" id="customTaskForm">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">小小计划</span>
+          <h2>再加一个任务</h2>
+        </div>
+        <button class="dialog-close" value="cancel" aria-label="关闭">
+          <svg class="icon"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+      <label class="field-label" for="customTaskInput">今天还想完成什么？</label>
+      <input class="text-field" id="customTaskInput" type="text" maxlength="24" placeholder="例如：整理书桌">
+      <div class="settings-actions">
+        <button class="soft-button" value="cancel">取消</button>
+        <button class="primary-button" value="default" type="submit">加入清单</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="mascotTemplate">
+    <div class="mascot-wrap" data-outfit="mint" data-accessory="crown" data-expression="happy">
+      <svg class="mascot-svg" viewBox="0 0 360 390" role="img" aria-label="戴着星星发饰的奶油色萌可">
+        <ellipse class="mascot-shadow" cx="180" cy="356" rx="92" ry="15" fill="#8fb9ad" opacity=".2"/>
+        <g class="mascot-tail">
+          <path d="M254 276c32-12 48 2 44 25-3 18-23 28-40 16-11-7-8-22 2-27 8-4 16 0 16 8 0 6-6 9-11 6" fill="#fff1cf" stroke="#4b5967" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <ellipse cx="180" cy="272" rx="91" ry="78" fill="#fff4d8" stroke="#4b5967" stroke-width="6"/>
+        <path class="outfit-main" d="M92 268c17-28 51-42 88-42s71 14 88 42l-6 63c-4 34-37 57-82 57s-78-23-82-57z" fill="#9ee1cf" stroke="#4b5967" stroke-width="6"/>
+        <path class="outfit-trim" d="M121 258c15 11 35 17 59 17s44-6 59-17" fill="none" stroke="#fff8e8" stroke-width="10" stroke-linecap="round"/>
+        <path class="outfit-pocket" d="M145 311c0-10 70-10 70 0l-4 25c-4 15-58 15-62 0z" fill="#fff8e8" opacity=".55"/>
+        <ellipse cx="118" cy="333" rx="31" ry="20" fill="#fff4d8" stroke="#4b5967" stroke-width="6"/>
+        <ellipse cx="242" cy="333" rx="31" ry="20" fill="#fff4d8" stroke="#4b5967" stroke-width="6"/>
+        <g class="mascot-arms">
+          <path d="M96 253c-25 14-31 37-17 50 12 11 30 0 35-19" fill="#fff4d8" stroke="#4b5967" stroke-width="6" stroke-linecap="round"/>
+          <path d="M264 253c25 14 31 37 17 50-12 11-30 0-35-19" fill="#fff4d8" stroke="#4b5967" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <g class="mascot-ears">
+          <path d="M108 111C81 94 66 61 76 42c14-28 57 0 73 47" fill="#fff1cf" stroke="#4b5967" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M101 92C84 77 77 59 82 49c8-15 32 8 42 35" fill="#ffb8bd" opacity=".52"/>
+          <path d="M252 111c27-17 42-50 32-69-14-28-57 0-73 47" fill="#fff1cf" stroke="#4b5967" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M259 92c17-15 24-33 19-43-8-15-32 8-42 35" fill="#ffb8bd" opacity=".52"/>
+        </g>
+        <ellipse cx="180" cy="159" rx="111" ry="102" fill="#fff7df" stroke="#4b5967" stroke-width="6"/>
+        <path d="M95 107c14-42 50-62 85-62s71 20 85 62c-22-5-42-4-58 2-26-15-56-15-84 0-10-4-19-5-28-2Z" fill="#fff0c6" opacity=".8"/>
+        <path d="M157 66c4-18 13-26 23-26 13 0 23 10 22 26-10-5-19-4-27 0-6 3-12 3-18 0Z" fill="#fff4d8" stroke="#4b5967" stroke-width="5" stroke-linejoin="round"/>
+        <ellipse cx="180" cy="179" rx="88" ry="66" fill="#fff9e9"/>
+        <g class="mascot-eyes">
+          <ellipse cx="145" cy="158" rx="11" ry="14" fill="#3f4f5d"/>
+          <ellipse cx="215" cy="158" rx="11" ry="14" fill="#3f4f5d"/>
+          <circle cx="149" cy="153" r="4" fill="#fff"/>
+          <circle cx="219" cy="153" r="4" fill="#fff"/>
+        </g>
+        <g class="mascot-happy-eyes">
+          <path d="M134 162c7-10 16-10 23 0m34 0c7-10 16-10 23 0" fill="none" stroke="#3f4f5d" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <ellipse cx="115" cy="194" rx="22" ry="12" fill="#ffb8bd" opacity=".7"/>
+        <ellipse cx="245" cy="194" rx="22" ry="12" fill="#ffb8bd" opacity=".7"/>
+        <path d="M172 184c5-4 11-4 16 0-1 7-4 10-8 10s-7-3-8-10Z" fill="#eaa0a6"/>
+        <path class="mouth-happy" d="M165 202c7 11 23 11 30 0" fill="none" stroke="#4b5967" stroke-width="4.5" stroke-linecap="round"/>
+        <path class="mouth-neutral" d="M171 206c6 3 12 3 18 0" fill="none" stroke="#4b5967" stroke-width="4.5" stroke-linecap="round"/>
+        <path class="mouth-worried" d="M171 208c6-5 12-5 18 0" fill="none" stroke="#4b5967" stroke-width="4.5" stroke-linecap="round"/>
+        <g class="mascot-star-accessory">
+          <path d="m289 75 7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#ffd76d" stroke="#4b5967" stroke-width="4" stroke-linejoin="round"/>
+        </g>
+        <g class="mascot-bow-accessory">
+          <path d="M159 69c-19-18-33-5-29 11 3 13 18 12 30 1zM201 69c19-18 33-5 29 11-3 13-18 12-30 1z" fill="#ff9dad" stroke="#4b5967" stroke-width="4"/>
+          <circle cx="180" cy="77" r="9" fill="#ffd76d" stroke="#4b5967" stroke-width="4"/>
+        </g>
+        <g class="mascot-beret-accessory">
+          <path d="M111 88c7-31 38-53 73-53s65 20 68 47c-17 14-38 21-70 21-29 0-52-5-71-15Z" fill="#7fc9e9" stroke="#4b5967" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M176 37c7-12 18-13 25-4" fill="none" stroke="#4b5967" stroke-width="5" stroke-linecap="round"/>
+          <path d="M110 88c37 11 91 10 142-6" fill="none" stroke="#4b5967" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <g class="mascot-sparkles">
+          <path d="m76 192 3 7 8 2-8 3-3 8-2-8-8-3 8-2z" fill="#ffd76d"/>
+          <path d="m294 231 2 5 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#ffb8bd"/>
+        </g>
+      </svg>
+    </div>
+  </template>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="install-banner" id="installBanner" hidden>
+    <span class="install-banner-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64"><path d="M15 26 9 12l16 7M49 26l6-14-16 7" fill="#b8ece0" stroke="#3f5363" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="34" r="22" fill="#fff6d9" stroke="#3f5363" stroke-width="3"/><circle cx="24" cy="32" r="3" fill="#3f5363"/><circle cx="40" cy="32" r="3" fill="#3f5363"/><path d="M27 41c2.4 2.7 7.6 2.7 10 0" fill="none" stroke="#3f5363" stroke-width="2.6" stroke-linecap="round"/></svg>
+    </span>
+    <div>
+      <strong>把萌可放到桌面</strong>
+      <span>以后点一下图标，就能打开工作台。</span>
+    </div>
+    <button class="soft-button" id="installBannerButton" type="button">立即安装</button>
+    <button class="install-banner-close" id="dismissInstallBanner" type="button" aria-label="稍后安装">
+      <svg class="icon"><use href="#icon-close"/></svg>
+    </button>
+  </div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

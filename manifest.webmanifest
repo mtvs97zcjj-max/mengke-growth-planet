@@ -1,0 +1,60 @@
+{
+  "id": "/",
+  "name": "萌可成长星球 · 幼升小学习工作台",
+  "short_name": "萌可成长",
+  "description": "为幼升小儿童设计的温柔学习、每日计划与萌可陪伴工作台",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "background_color": "#fff8e8",
+  "theme_color": "#fff7e7",
+  "orientation": "any",
+  "categories": [
+    "education",
+    "kids",
+    "productivity"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "今日计划",
+      "short_name": "今日",
+      "url": "/#home"
+    },
+    {
+      "name": "学习岛",
+      "short_name": "学习",
+      "url": "/#study/pinyin"
+    },
+    {
+      "name": "萌可小屋",
+      "short_name": "萌可",
+      "url": "/#pet"
+    }
+  ]
+}

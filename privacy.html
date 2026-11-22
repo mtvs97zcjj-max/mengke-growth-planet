@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7e7">
+  <title>隐私说明 · 萌可成长星球</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #3e4d5a;
+      --muted: #747f84;
+      --paper: #fffdf7;
+      --cream: #fff8e8;
+      --mint: #a9e4d2;
+      --line: #eadfc9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255, 220, 129, .3), transparent 25%),
+        radial-gradient(circle at 92% 15%, rgba(169, 228, 210, .3), transparent 25%),
+        var(--cream);
+      font-family: "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.8;
+    }
+    main {
+      width: min(760px, calc(100% - 28px));
+      margin: 28px auto;
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255, 253, 247, .94);
+      box-shadow: 0 18px 50px rgba(80, 70, 50, .1);
+    }
+    h1 { margin: 0 0 5px; font-size: clamp(26px, 5vw, 38px); }
+    h2 { margin: 28px 0 8px; font-size: 19px; }
+    p, li { color: var(--muted); font-size: 14px; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      margin-bottom: 18px;
+      padding: 0 15px;
+      border-radius: 13px;
+      color: #477e70;
+      background: #e9f8f3;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .callout {
+      padding: 15px 17px;
+      border-radius: 16px;
+      background: #f0f9f5;
+      color: #5d766e;
+      font-size: 13px;
+    }
+    a { color: #4d8d7c; }
+    footer { margin-top: 30px; color: #9b978f; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html">← 回到工作台</a>
+    <h1>隐私说明</h1>
+    <p>萌可成长星球面向儿童使用，我们尽量少收集信息，并把重要选择交给家长。</p>
+
+    <div class="callout">学习记录、昵称、星星、萌可状态和聊天文字默认只保存在当前浏览器。我们不在本站服务器上保存这些记录。</div>
+
+    <h2>智能陪聊</h2>
+    <p>开启“智能陪聊”后，为了理解上下文，最近几条聊天文字、孩子设置的昵称、当前任务完成情况和萌可状态会发送给本站配置的云端 AI 服务，用来即时生成回复。聊天内容不经本站数据库保存。</p>
+    <p>请不要在与萌可聊天时输入家庭住址、学校全名、电话号码、照片、密码或其他敏感信息。家长可以在设置中关闭智能陪聊，关闭后会在本机使用安全预设回应。</p>
+
+    <h2>天气</h2>
+    <p>点击更新天气时，浏览器可能询问定位权限。授权后，位置坐标会发送给 Open-Meteo 用来获取当地天气；我们不会保存坐标。拒绝定位时会显示山东参考天气。</p>
+
+    <h2>儿童安全</h2>
+    <p>智能陪聊设置了儿童安全边界，不索取隐私、不提供危险或成人内容。涉及受伤、欺负、威胁或危险时，萌可会明确建议孩子立即告诉家长、老师或其他可信赖的大人。萌可不是医生，也不能替代真实成年人的照料。</p>
+
+    <h2>删除数据</h2>
+    <p>在“成长记录 → 家长设置”中点击“清空全部记录”，可以删除当前浏览器保存的学习、星星、萌可和聊天记录。这项操作不能撤销。</p>
+
+    <footer>萌可成长星球 · 最近更新：2026 年 11 月</footer>
+  </main>
+</body>
+</html>
