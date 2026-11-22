@@ -1252,10 +1252,16 @@
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(content);
     const lang = options.lang || "zh-CN";
+    const chinese = lang.toLowerCase().startsWith("zh");
+    const requestedPitch = Number(options.pitch);
     utterance.lang = lang;
-    utterance.rate = options.rate ?? (lang.startsWith("zh") ? 0.82 : 0.8);
-    utterance.pitch = options.pitch ?? 1.1;
-    utterance.volume = options.volume ?? 1;
+    utterance.rate = chinese
+      ? Math.min(0.86, Math.max(0.76, Number(options.rate) || 0.82))
+      : (options.rate ?? 0.8);
+    utterance.pitch = chinese
+      ? Math.min(1.28, Math.max(1.13, Number.isFinite(requestedPitch) ? requestedPitch : 1.17))
+      : (options.pitch ?? 1.1);
+    utterance.volume = options.volume ?? 0.96;
     const voice = selectBestVoice(lang);
     if (voice) utterance.voice = voice;
     window.speechSynthesis.speak(utterance);
@@ -1268,11 +1274,29 @@
     const candidates = voices.filter((voice) => voice.lang.toLowerCase().startsWith(prefix));
     if (!candidates.length) return null;
     if (prefix === "zh") {
-      const preferred = candidates.find((voice) => /xiaoxiao|huihui|ting|meijia|yaoyao|natural/i.test(voice.name));
-      return preferred || candidates[0];
+      const score = (voice) => {
+        const name = voice.name.toLowerCase();
+        let value = 0;
+        if (/natural|neural/.test(name)) value += 15;
+        if (/xiaoxiao|xiaoyi|xiaohan|xiaomeng|xiaomo/.test(name)) value += 100;
+        if (/yaoyao/.test(name)) value += 90;
+        if (/ting-ting|tingting|meijia|mei-jia|sin-ji/.test(name)) value += 75;
+        if (/huihui/.test(name)) value += 25;
+        if (/kangkang|yunxi|yunjian|male|man\b/.test(name)) value -= 100;
+        return value;
+      };
+      return [...candidates].sort((a, b) => score(b) - score(a))[0];
     }
-    const preferredEnglish = candidates.find((voice) => /aria|jenny|samantha|natural|female/i.test(voice.name));
-    return preferredEnglish || candidates[0];
+    const scoreEnglish = (voice) => {
+      const name = voice.name.toLowerCase();
+      let value = 0;
+      if (/natural|neural/.test(name)) value += 15;
+      if (/aria|jenny|samantha|sonia|libby/.test(name)) value += 80;
+      if (/female/.test(name)) value += 20;
+      if (/male|david|mark|guy/.test(name)) value -= 80;
+      return value;
+    };
+    return [...candidates].sort((a, b) => scoreEnglish(b) - scoreEnglish(a))[0];
   }
 
   function softChime(type = "success") {
@@ -2244,6 +2268,17 @@
       toggle.querySelector("b").textContent = state.settings.voice ? "已开启" : "已关闭";
       saveState();
       if (state.settings.voice) speakText("语音已经打开啦，我会温柔地慢慢说。", { lang: "zh-CN", rate: 0.82 });
+    });
+    $("#previewVoiceButton").addEventListener("click", () => {
+      if (!state.settings.voice) {
+        showToast("请先打开上面的语音朗读开关。");
+        return;
+      }
+      speakText("嗨，我是萌可。我会轻轻地陪着你，一起慢慢学习。", {
+        lang: "zh-CN",
+        rate: 0.8,
+        pitch: 1.18
+      });
     });
     $("#smartChatToggle").addEventListener("click", () => {
       state.settings.smartChat = !state.settings.smartChat;

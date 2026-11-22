@@ -13,7 +13,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -1017,8 +1017,12 @@
 
       <div class="setting-row">
         <div>
-          <strong>语音音量</strong>
-          <p>所有朗读都采用温柔慢速；拼音语速为 0.8。</p>
+          <strong>萌可的童声</strong>
+          <p>优先使用温柔小女生音色；拼音语速保持 0.8。</p>
+          <button class="voice-preview-button" id="previewVoiceButton" type="button">
+            <svg class="icon"><use href="#icon-volume"/></svg>
+            试听萌可声音
+          </button>
         </div>
         <button class="toggle-button is-on" id="voiceToggle" type="button" aria-pressed="true">
           <span></span>
@@ -1155,6 +1159,6 @@
     </button>
   </div>
 
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
