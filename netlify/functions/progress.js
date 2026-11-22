@@ -43,6 +43,9 @@ exports.handler = async function handler(event) {
   if (!validDeviceId(deviceId)) return json(400, { error: "device_id_required" });
   if (!blobModule?.getStore) return json(503, { error: "storage_not_available" });
 
+  if (typeof blobModule.connectLambda === "function") {
+    blobModule.connectLambda(event);
+  }
   const store = blobModule.getStore("mengke-learning-progress");
   const key = `device/${deviceId}`;
 
